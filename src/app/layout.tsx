@@ -3,6 +3,7 @@ import { Inter, Quicksand } from 'next/font/google';
 import { site } from '@/lib/site';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { FooterGate } from '@/components/layout/FooterGate';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationLd, localBusinessLd } from '@/lib/schema';
 import './globals.css';
@@ -61,7 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <Header />
         <main id="main">{children}</main>
-        <Footer />
+        <FooterGate>
+          <Footer />
+        </FooterGate>
       </body>
     </html>
   );

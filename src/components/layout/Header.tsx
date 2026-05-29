@@ -28,6 +28,8 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  if (pathname?.startsWith('/studio')) return null;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-paper/80 backdrop-blur-xl">
       <Container className="flex h-14 items-center justify-between gap-4 lg:h-16">
