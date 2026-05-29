@@ -59,6 +59,26 @@ export const bydBattery: PageContent = {
       ],
     },
     {
+      kind: 'prose',
+      heading: 'Why the battery choice de-risks the whole project',
+      paragraphs: [
+        'A BESS is a long-life asset, so the battery decision shapes safety, bankability, warranty and O&M for a decade or more. Choosing a proven, safety-focused chemistry up front removes risk that is expensive to fix later.',
+        "Solunar uses BYD's cobalt-free LFP platform where it suits the project, then engineers the surrounding system so safety, monitoring and performance hold up across the asset's life.",
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How Solunar integrates BYD batteries',
+      lead: 'Selecting BYD is the start; the value is in the integration:',
+      items: [
+        { title: 'Assess suitability', text: 'Confirm BYD fits the capacity, safety, bankability and commercial requirements.' },
+        { title: 'Configure with PCS & EMS', text: 'Match the battery to the right power conversion and control strategy.' },
+        { title: 'Safety & thermal design', text: 'Coordinate BMS, thermal management, fire detection and protection.' },
+        { title: 'Commission & document', text: 'Test, commission and provide bankable technical documentation.' },
+        { title: 'O&M & warranty', text: 'Support monitoring, maintenance and warranty coordination long-term.' },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Considering BYD battery solutions for a Malaysian project?',
       text: 'Solunar can assess whether selected BYD battery integration suits your safety, bankability and performance requirements.',
@@ -117,6 +137,42 @@ export const goodweInverter: PageContent = {
       heading: 'Where GoodWe fits',
       paragraphs: [
         'GoodWe suits flexible solar-plus-storage configurations, distributed energy projects, self-consumption and retrofit applications, including AC-coupled retrofit inverters and low-voltage or high-voltage battery options.',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'Why the inverter choice matters',
+      paragraphs: [
+        'The inverter is where solar generation, battery storage and the customer load meet. The right inverter and control strategy determine how well a site self-consumes solar, shifts energy and rides through disturbances.',
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'check',
+      columns: 2,
+      heading: 'What Solunar supports with GoodWe',
+      lead: 'Solunar provides GoodWe product support across the project lifecycle:',
+      items: [
+        'Product selection and sizing for the application',
+        'Solar + storage configuration (AC- or DC-coupled)',
+        'Hybrid and retrofit scenarios',
+        'Commissioning and monitoring setup',
+        'After-sales and warranty coordination',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Can GoodWe inverters retrofit to existing solar?',
+          answer:
+            'Yes — GoodWe offers AC-coupled retrofit options that add battery storage to an existing solar system without replacing the original inverter, subject to site design.',
+        },
+        {
+          question: 'Does Solunar size the GoodWe system?',
+          answer:
+            'Yes. Solunar reviews your load, solar and objectives to recommend the right inverter and battery configuration for self-consumption, backup or demand management.',
+        },
       ],
     },
     {
@@ -182,6 +238,29 @@ export const eveBess: PageContent = {
     {
       kind: 'note',
       text: 'Solunar can integrate different BESS platforms, including EVE BESS, depending on project requirements. Final technical configuration is subject to project design, brand approval, commercial terms and site requirements.',
+    },
+    {
+      kind: 'prose',
+      heading: 'When an alternative LFP platform makes sense',
+      paragraphs: [
+        'No single battery suits every project. For some commercial and utility-scale applications, an alternative LFP platform such as EVE can be the better fit on capacity, thermal design, monitoring or commercial terms.',
+        'Solunar evaluates the options objectively and integrates whichever platform best matches the project — rather than forcing one brand onto every site.',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Why consider EVE instead of another brand?',
+          answer:
+            'EVE emphasises LFP technology, thermal management, system-level safety protection and cloud monitoring. It can suit projects needing those characteristics or an alternative configuration; Solunar assesses fit per project.',
+        },
+        {
+          question: 'Can EVE integrate with my PCS and EMS?',
+          answer:
+            'Yes — Solunar coordinates EVE BESS with the PCS, EMS, site electrical systems and O&M, subject to project design and brand approval.',
+        },
+      ],
     },
     {
       kind: 'cta',
@@ -250,6 +329,33 @@ export const multiBrand: PageContent = {
     {
       kind: 'pullquote',
       text: 'We are not locked to one technical pathway. Every project gets the architecture it actually needs.',
+    },
+    {
+      kind: 'cards',
+      heading: 'What drives the right architecture',
+      lead: "The best configuration falls out of the project's real constraints, not a brand preference:",
+      columns: 2,
+      items: [
+        { icon: 'gauge', title: 'Capacity & duration', text: 'How much energy, and for how long, determines cells, racks and C-rate.' },
+        { icon: 'safety', title: 'Safety & site constraints', text: 'Fire strategy, ventilation, space and cooling shape the enclosure and layout.' },
+        { icon: 'developers', title: 'Bankability & warranty', text: 'Investor and lender confidence depends on proven brands and clear warranties.' },
+        { icon: 'integration', title: 'Grid & interconnection', text: 'Voltage level, grid code and offtake define the PCS and control strategy.' },
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Is multi-brand integration harder to support?',
+          answer:
+            'Not when it is engineered properly. Solunar coordinates the battery, PCS and EMS into one monitored system and provides single-point O&M support, regardless of the underlying brands.',
+        },
+        {
+          question: 'How do you decide which brand to use?',
+          answer:
+            'We weigh capacity, discharge duration, safety, space, cooling, warranty, bankability, budget, timeline and grid requirements — then recommend and integrate the most suitable platform.',
+        },
+      ],
     },
     {
       kind: 'cta',
@@ -323,6 +429,29 @@ export const pcsEms: PageContent = {
       heading: 'Why does integration matter?',
       paragraphs: [
         'Even good equipment performs badly if poorly integrated. Solunar helps partners make components work together as one coordinated system, so the battery, PCS, EMS, protection and monitoring operate and perform as one.',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'What goes wrong without proper integration',
+      paragraphs: [
+        'Good equipment underperforms when it is poorly integrated: efficiency drops, response is sluggish, alarms are missed, and warranty or safety gaps appear at the seams between components.',
+        'Solunar treats the PCS, EMS, BMS, protection, metering and site load as one system — so the BESS dispatches correctly, reports reliably and operates safely.',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'What is the difference between a BMS and an EMS?',
+          answer:
+            'The BMS protects and balances the battery cells; the EMS decides the overall charge/discharge strategy for the site. Both are required for a safe, effective BESS.',
+        },
+        {
+          question: 'Can Solunar integrate equipment we already have?',
+          answer:
+            'Often yes. Solunar reviews the existing battery, PCS, switchgear and metering and coordinates the integration and control logic, subject to compatibility and site design.',
+        },
       ],
     },
     {

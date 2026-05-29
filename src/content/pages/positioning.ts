@@ -215,6 +215,33 @@ export const bessPartnerForEpcc: PageContent = {
       text: 'You own the client. We support the technology.',
     },
     {
+      kind: 'cards',
+      heading: 'What BESS adds beyond solar EPCC',
+      lead: 'Solar EPCCs hold strong project and electrical capability; BESS adds requirements Solunar fills:',
+      columns: 2,
+      items: [
+        { icon: 'battery', title: 'Battery chemistry & selection', text: 'Choosing the right cells, capacity and brand for safety, life and bankability.' },
+        { icon: 'pcs', title: 'PCS & EMS controls', text: 'Power conversion and control logic that dispatch the battery correctly.' },
+        { icon: 'safety', title: 'Fire & thermal safety', text: 'Thermal management, fire detection and suppression engineered for the energy on site.' },
+        { icon: 'om', title: 'Degradation & O&M', text: 'Performance, degradation planning and long-term maintenance of the asset.' },
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Will Solunar deal with our client directly?',
+          answer:
+            'No. You own the client relationship and site execution. Solunar works behind your team on the storage technology layer.',
+        },
+        {
+          question: 'When should we bring Solunar in?',
+          answer:
+            'As early as the proposal stage, so battery sizing, PCS/EMS selection and O&M planning are correct before pricing is fixed.',
+        },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Add a BESS technology backbone to your EPCC business.',
       text: 'You bring the project. Solunar brings the battery, PCS, EMS and integration expertise behind the scenes.',
@@ -276,6 +303,17 @@ export const epccPartnerProgramme: PageContent = {
           answer:
             'Engagement depends on project scope and partnership level — contact Solunar for a tailored discussion.',
         },
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How the partnership works',
+      lead: 'Solunar supports your team from first enquiry to handover:',
+      items: [
+        { title: 'Scope & load review', text: 'We review the opportunity, load profile and site to frame the BESS.' },
+        { title: 'Sizing & proposal', text: 'We size the battery, PCS and EMS and support your commercial proposal.' },
+        { title: 'Integration support', text: 'We help with design, documentation and vendor coordination.' },
+        { title: 'Commissioning & O&M', text: 'We support commissioning and plan long-term O&M and after-sales.' },
       ],
     },
     {

@@ -173,6 +173,33 @@ export const utilityScale: PageContent = {
       ],
     },
     {
+      kind: 'cards',
+      heading: 'Challenges at utility scale',
+      lead: 'Large grid-connected storage assets carry risks that need engineering discipline:',
+      columns: 2,
+      items: [
+        { icon: 'integration', title: 'Grid compliance & dispatch', text: 'Ramp control, voltage/frequency support and SCADA/EMS coordination to meet grid-code and offtake requirements.' },
+        { icon: 'safety', title: 'Safety & fire at scale', text: 'Container layout, thermal management, fire detection and suppression sized for MWh-class energy.' },
+        { icon: 'battery', title: 'Long-duration performance', text: 'Degradation, augmentation planning and round-trip efficiency across a 10–15 year life.' },
+        { icon: 'om', title: 'Long-term O&M & warranty', text: 'Monitoring, spares, preventive maintenance and warranty coordination over the asset life.' },
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'What makes a utility-scale ESS bankable?',
+          answer:
+            'Proven equipment, sound safety and fire design, credible performance and degradation assumptions, a clear O&M strategy and complete technical documentation — the areas Solunar helps developers and lenders de-risk.',
+        },
+        {
+          question: 'Do you support EPCCs as well as asset owners?',
+          answer:
+            'Yes. Solunar supports developers, asset owners and EPCC contractors with battery selection, integration, monitoring and long-term O&M for utility-scale ESS.',
+        },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Developing a utility-scale ESS farm?',
       text: 'Solunar supports developers, asset owners and EPCCs with battery selection, integration, monitoring and long-term O&M.',
@@ -244,6 +271,29 @@ export const bessOm: PageContent = {
       ],
     },
     {
+      kind: 'prose',
+      heading: 'What happens without proper O&M',
+      paragraphs: [
+        'A battery asset that is not actively maintained drifts out of spec: cells imbalance, thermal performance degrades, alarms go unactioned and warranty conditions can be breached — quietly eroding performance and value.',
+        'Proactive O&M protects safety, performance and the warranty, and keeps the asset bankable through its life.',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'How is BESS O&M scoped and priced?',
+          answer:
+            'It depends on asset size, location, monitoring scope and response requirements. Solunar scopes O&M to the project rather than offering a one-size package.',
+        },
+        {
+          question: 'Can you take over O&M for an existing BESS?',
+          answer:
+            'Often yes — subject to a technical review of the installed battery, PCS, EMS and safety systems and the available documentation.',
+        },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Keep your storage asset healthy for the long term.',
       text: 'Solunar supports O&M planning and technical coordination for commercial and utility-scale ESS projects.',
@@ -295,6 +345,40 @@ export const bessSafety: PageContent = {
         'O&M procedures',
         'Site access control',
         'Emergency response planning',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'Why safety is a financing requirement, not a feature',
+      paragraphs: [
+        'For asset owners, lenders and insurers, BESS safety is not a marketing line — it is a condition of investment. A credible safety case covers chemistry, BMS, thermal management, fire detection and suppression, electrical protection and emergency response.',
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How Solunar approaches BESS safety',
+      lead: 'Solunar helps partners build safety in from the design stage:',
+      items: [
+        { title: 'Chemistry & BMS review', text: 'Confirm a safety-focused chemistry (such as LFP) and a robust battery management system.' },
+        { title: 'Thermal & cooling design', text: 'Manage temperature and airflow to prevent and contain hazards.' },
+        { title: 'Fire detection & suppression', text: 'Specify detection, suppression and containment appropriate to the energy on site.' },
+        { title: 'Protection & shutdown', text: 'Electrical protection, emergency shutdown and isolation strategy.' },
+        { title: 'Procedures & response', text: 'O&M procedures, site access control and emergency-response planning.' },
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Is LFP chemistry inherently safe?',
+          answer:
+            'LFP is positioned around thermal stability and is widely chosen for storage, but site safety still depends on full system design — BMS, thermal management, fire systems and integration.',
+        },
+        {
+          question: 'Do you help with insurer and authority requirements?',
+          answer:
+            'Solunar helps prepare the technical and safety documentation that supports insurer, lender and authority review, in coordination with your EPCC and consultants.',
+        },
       ],
     },
     {
@@ -477,6 +561,29 @@ export const solarBessDevelopers: PageContent = {
       ],
     },
     {
+      kind: 'prose',
+      heading: 'What makes a Solar + BESS asset bankable',
+      paragraphs: [
+        'Adding storage turns a generation asset into a dispatchable, grid-friendly one — but bankability depends on the technical and commercial layer behind it: proven equipment, sound integration, credible performance assumptions and a clear O&M plan.',
+        'Solunar provides that layer, helping developers and asset owners present projects that lenders and investors can underwrite with confidence.',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Does Solunar replace our EPCC or developer team?',
+          answer:
+            'No. Solunar supplies the BESS technology and integration layer behind your team — you keep the project, the client and execution.',
+        },
+        {
+          question: 'Can you support investor and lender due diligence?',
+          answer:
+            'Yes — Solunar can provide technical due-diligence materials, performance and degradation assumptions, safety summaries and an O&M strategy to support financing.',
+        },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Make your renewable asset more valuable and bankable.',
       text: 'Solunar provides the technology and integration layer behind Solar + BESS assets for developers and asset owners.',
@@ -538,6 +645,23 @@ export const localAssembly: PageContent = {
         'Create potential local-content advantages in future projects',
       ],
       note: 'These are forward-looking opportunities. Solunar’s current engagement focuses on technology distribution, system integration and O&M support.',
+    },
+    {
+      kind: 'prose',
+      heading: 'Why localisation matters for Malaysia’s energy ecosystem',
+      paragraphs: [
+        'As BESS deployment scales in Malaysia, local assembly and support can shorten delivery, improve after-sales response, lower logistics complexity and build domestic technical capability — strengthening the energy-storage ecosystem and supporting local-content goals in future projects.',
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Is local assembly available today?',
+          answer:
+            'These are forward-looking opportunities. Solunar’s current engagement focuses on technology distribution, system integration and O&M support, while building towards localised assembly.',
+        },
+      ],
     },
     {
       kind: 'cta',
