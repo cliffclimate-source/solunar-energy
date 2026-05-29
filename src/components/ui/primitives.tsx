@@ -44,14 +44,9 @@ export function Section({
   );
 }
 
-/** Mono uppercase kicker with a short leading rule. */
+/** Small, restrained section kicker (Apple-style). */
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <span className={cn('eyebrow inline-flex items-center gap-2.5', className)}>
-      <span className="h-px w-6 bg-current opacity-50" aria-hidden="true" />
-      {children}
-    </span>
-  );
+  return <span className={cn('eyebrow', className)}>{children}</span>;
 }
 
 /** Eyebrow + heading + optional description, left or centre aligned. */

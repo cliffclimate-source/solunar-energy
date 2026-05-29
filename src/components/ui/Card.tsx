@@ -9,7 +9,7 @@ const cardBase =
 function IconBadge({ name }: { name?: string }) {
   const Icon = getIcon(name);
   return (
-    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-2/10 text-accent-2 ring-1 ring-accent-2/20">
+    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-mist text-ink ring-1 ring-line">
       <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.75} />
     </span>
   );

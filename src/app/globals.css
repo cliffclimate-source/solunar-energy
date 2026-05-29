@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* Design tokens — stored as space-separated RGB channels so Tailwind
-     opacity modifiers (e.g. bg-ink/80) work via rgb(var(--token) / <alpha>). */
-  --ink: 10 26 47; /* #0A1A2F deep midnight navy */
-  --ink-2: 16 42 67; /* #102A43 raised dark surface */
+  /* Apple-style neutral palette (stored as RGB channels for Tailwind alpha).
+     White-dominant canvas, near-black text, restrained single accent. */
+  --ink: 29 29 31; /* #1D1D1F near-black text + rare dark sections */
+  --ink-2: 44 44 46; /* #2C2C2E raised dark surface */
   --paper: 255 255 255; /* #FFFFFF */
-  --mist: 244 247 250; /* #F4F7FA light section background */
-  --line: 226 232 240; /* #E2E8F0 hairline borders */
-  --muted: 91 107 123; /* #5B6B7B secondary text */
-  --accent: 232 163 61; /* #E8A33D solar amber */
-  --accent-2: 31 182 166; /* #1FB6A6 energy teal */
-  --success: 31 182 166;
+  --mist: 245 245 247; /* #F5F5F7 Apple light gray */
+  --line: 210 210 215; /* #D2D2D7 hairline borders */
+  --muted: 110 110 115; /* #6E6E73 secondary text */
+  --accent: 232 163 61; /* #E8A33D solar amber — single brand accent */
+  --accent-2: 232 163 61; /* unified on amber for a monochrome accent */
+  --success: 48 168 95; /* #30A85F */
 }
 
 @layer base {
@@ -24,7 +24,9 @@
 
   body {
     @apply bg-paper font-sans text-ink antialiased;
-    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.003em;
   }
 
   h1,
@@ -45,17 +47,16 @@
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--accent-2));
+    outline: 2px solid rgb(var(--accent));
     outline-offset: 2px;
     border-radius: 3px;
   }
-
-  /* Hairline rules between auto-stacked sections handled per-component. */
 }
 
 @layer components {
+  /* Apple-style eyebrow: small, semibold, muted — no mono, no rule. */
   .eyebrow {
-    @apply font-mono text-[0.6875rem] font-medium uppercase tracking-eyebrow text-accent-2;
+    @apply text-[0.8125rem] font-semibold text-muted;
   }
 
   .prose-body {
@@ -76,8 +77,6 @@
 }
 
 @layer utilities {
-  /* Scroll-reveal: starts hidden/translated, .is-visible removes it.
-     The Reveal client component toggles is-visible via IntersectionObserver. */
   .reveal {
     opacity: 0;
     transform: translateY(16px);

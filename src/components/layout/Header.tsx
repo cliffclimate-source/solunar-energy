@@ -11,28 +11,12 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/primitives';
 
 const navItemBase =
-  'rounded-full px-3 py-2 text-sm font-medium transition-colors duration-200';
+  'rounded-full px-3 py-2 text-[0.92rem] font-medium text-ink/70 transition-colors duration-200 hover:text-ink';
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    let raf = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => setScrolled(window.scrollY > 12));
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  // Close the mobile drawer whenever the route changes.
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -44,36 +28,21 @@ export function Header() {
     };
   }, [mobileOpen]);
 
-  const solid = scrolled || mobileOpen;
-
   return (
-    <header
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300',
-        solid
-          ? 'border-b border-line bg-paper/90 shadow-[0_1px_0_rgb(10_26_47/0.02)] backdrop-blur-md'
-          : 'border-b border-transparent',
-      )}
-    >
-      <Container className="flex h-16 items-center justify-between gap-4 lg:h-20">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line/70 bg-paper/80 backdrop-blur-xl">
+      <Container className="flex h-14 items-center justify-between gap-4 lg:h-16">
         <Link href="/" aria-label="Solunar Energy — home" className="shrink-0">
-          <Wordmark onDark={!solid} />
+          <Wordmark />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-0.5">
             {primaryNav.map((entry) =>
               isNavGroup(entry) ? (
-                <NavDropdown key={entry.label} group={entry} solid={solid} />
+                <NavDropdown key={entry.label} group={entry} />
               ) : (
                 <li key={entry.label}>
-                  <Link
-                    href={entry.href}
-                    className={cn(
-                      navItemBase,
-                      solid ? 'text-ink/75 hover:text-ink' : 'text-paper/85 hover:text-paper',
-                    )}
-                  >
+                  <Link href={entry.href} className={navItemBase}>
                     {entry.label}
                   </Link>
                 </li>
@@ -90,10 +59,7 @@ export function Header() {
 
         <button
           type="button"
-          className={cn(
-            'inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden',
-            solid ? 'text-ink hover:bg-ink/5' : 'text-paper hover:bg-paper/10',
-          )}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5 lg:hidden"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
@@ -108,7 +74,7 @@ export function Header() {
   );
 }
 
-function NavDropdown({ group, solid }: { group: NavGroup; solid: boolean }) {
+function NavDropdown({ group }: { group: NavGroup }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
 
@@ -139,11 +105,7 @@ function NavDropdown({ group, solid }: { group: NavGroup; solid: boolean }) {
         aria-haspopup="true"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className={cn(
-          navItemBase,
-          'inline-flex items-center gap-1',
-          solid ? 'text-ink/75 hover:text-ink' : 'text-paper/85 hover:text-paper',
-        )}
+        className={cn(navItemBase, 'inline-flex items-center gap-1')}
       >
         {group.label}
         <ChevronDown
@@ -157,7 +119,7 @@ function NavDropdown({ group, solid }: { group: NavGroup; solid: boolean }) {
           open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0',
         )}
       >
-        <div className="w-80 rounded-2xl border border-line bg-paper p-2 shadow-lift">
+        <div className="w-80 rounded-2xl border border-line bg-paper/95 p-2 shadow-lift backdrop-blur-xl">
           <ul className="flex flex-col">
             {group.items.map((item) => (
               <li key={item.href}>
@@ -185,7 +147,7 @@ function NavDropdown({ group, solid }: { group: NavGroup; solid: boolean }) {
 function MobileDrawer() {
   return (
     <div id="mobile-nav" className="lg:hidden">
-      <div className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto overscroll-contain bg-paper">
+      <div className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto overscroll-contain bg-paper">
         <Container className="flex flex-col py-4">
           {primaryNav.map((entry) =>
             isNavGroup(entry) ? (
