@@ -1,45 +1,62 @@
 import { cn } from '@/lib/cn';
 
-/** Geometric brand mark: a solar disc above stacked storage layers. */
-export function BrandMark({ className }: { className?: string }) {
+/**
+ * The amber "peak" that replaces the letter A in the SOLUNAR wordmark —
+ * two strokes meeting at a rounded apex with a centred dot. Always amber,
+ * regardless of background.
+ */
+function Peak({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 32 32"
-      className={cn('h-7 w-7', className)}
-      role="img"
+      viewBox="0 0 44 60"
+      className={className}
+      role="presentation"
       aria-hidden="true"
       focusable="false"
     >
-      <circle cx="16" cy="10" r="6" className="fill-accent" />
-      <rect x="5" y="19.6" width="22" height="3.4" rx="1.7" className="fill-accent-2" />
-      <rect x="8" y="25.2" width="16" height="3.4" rx="1.7" className="fill-accent-2/65" />
+      <path
+        d="M5 55 L22 8 L39 55"
+        fill="none"
+        strokeWidth={7.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="stroke-accent"
+      />
+      <circle cx="22" cy="41" r="4.6" className="fill-accent" />
     </svg>
   );
 }
 
-/** Full lockup: brand mark + "Solunar Energy" wordmark. */
+/** Standalone brand mark (the amber peak) for compact contexts. */
+export function BrandMark({ className }: { className?: string }) {
+  return <Peak className={cn('h-7 w-auto', className)} />;
+}
+
+/**
+ * Solunar brand wordmark: "SOLUNAR" with the amber peak replacing the A.
+ * The letters use currentColor, so the lockup adapts to light (ink) and dark
+ * (paper) backgrounds while the peak stays amber.
+ */
 export function Wordmark({
-  className,
   onDark = false,
-  showText = true,
+  className,
 }: {
-  className?: string;
   onDark?: boolean;
-  showText?: boolean;
+  className?: string;
 }) {
   return (
-    <span className={cn('inline-flex items-center gap-2.5', className)}>
-      <BrandMark />
-      {showText && (
-        <span
-          className={cn(
-            'font-display text-[1.18rem] font-semibold leading-none tracking-[-0.02em]',
-            onDark ? 'text-paper' : 'text-ink',
-          )}
-        >
-          Solunar<span className="font-normal opacity-60"> Energy</span>
-        </span>
+    <span
+      role="img"
+      aria-label="Solunar"
+      className={cn(
+        'inline-flex select-none items-baseline font-logo text-[1.35rem] font-semibold uppercase leading-none tracking-[0.045em]',
+        onDark ? 'text-paper' : 'text-ink',
+        className,
       )}
+    >
+      <span>Solun</span>
+      <Peak className="mx-[0.04em] h-[0.72em] w-auto translate-y-[0.04em]" />
+      <span>r</span>
     </span>
   );
 }
