@@ -11,6 +11,7 @@ export const bydBattery: PageContent = {
   lead: 'BYD is a globally recognised battery technology company, and Solunar Energy integrates selected BYD battery solutions for Malaysian energy storage projects where safety, reliability and long-term performance are critical.',
   heroActions: [{ label: 'Discuss BYD Battery Integration', href: '/contact' }],
   image: {
+    src: '/images/byd-battery.png',
     alt: 'BYD Battery-Box LFP storage cabinets at a commercial site in Malaysia',
     prompt:
       'Photorealistic BYD Battery-Box LFP battery storage cabinets in a clean electrical room at a commercial facility in Malaysia, neat cabling, safety signage, bright industrial lighting, wide angle.',
@@ -80,6 +81,7 @@ export const goodweInverter: PageContent = {
   lead: 'Solunar Energy is a distributor for GoodWe inverters and battery solutions in Malaysia, covering solar, hybrid and energy storage inverter applications.',
   heroActions: [{ label: 'Request GoodWe Product Support', href: '/contact' }],
   image: {
+    src: '/images/goodwe-inverter.png',
     alt: 'GoodWe hybrid inverter installed at a Malaysian commercial site',
     prompt:
       'Photorealistic GoodWe hybrid solar inverter wall-mounted in a tidy plant room at a Malaysian commercial building, neat conduits, daytime, professional and clean.',
@@ -140,6 +142,7 @@ export const eveBess: PageContent = {
   lead: 'Solunar Energy can integrate EVE BESS solutions in Malaysia depending on project needs, technical configuration and commercial requirements.',
   heroActions: [{ label: 'Assess EVE BESS Suitability', href: '/contact' }],
   image: {
+    src: '/images/eve-bess.png',
     alt: 'EVE LFP battery modules inside a containerised energy storage system',
     prompt:
       'Photorealistic EVE LFP battery modules and racks inside a containerised BESS with cooling and BMS units, clean industrial interior, Southeast Asia.',
@@ -203,6 +206,7 @@ export const multiBrand: PageContent = {
   lead: 'Solunar Energy integrates multiple BESS brands — including BYD, GoodWe and EVE — and selects the right configuration for each project rather than forcing one technology on every site.',
   heroActions: [{ label: 'Recommend the Right Architecture', href: '/contact' }],
   image: {
+    src: '/images/multi-brand-integration.png',
     alt: 'Battery racks, PCS and EMS integrated into one storage system in Malaysia',
     prompt:
       'Photorealistic mixed-brand BESS integration — battery racks, a PCS cabinet and an EMS controller wired together, a Malaysian Chinese engineer reviewing on a tablet, clean industrial setting in Malaysia.',
@@ -270,6 +274,7 @@ export const pcsEms: PageContent = {
   lead: 'A complete BESS project requires proper integration of hardware, software and electrical infrastructure — the battery is just one component, and Solunar Energy coordinates the whole system.',
   heroActions: [{ label: 'Request System Architecture Support', href: '/contact' }],
   image: {
+    src: '/images/pcs-ems.png',
     alt: 'PCS and EMS cabinets with a SCADA screen in a BESS electrical room',
     prompt:
       'Photorealistic power conversion system (PCS) cabinets and an EMS control panel with a SCADA monitoring screen in a tidy BESS electrical room, Malaysia, professional lighting.',

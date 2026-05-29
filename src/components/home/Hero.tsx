@@ -30,6 +30,7 @@ export function Hero() {
         </div>
         <div className="mx-auto mt-14 max-w-5xl">
           <Figure
+            src="/images/home-bess-containers.png"
             aspect="16 / 9"
             tone="light"
             priority

@@ -12,6 +12,7 @@ const industriesPage: PageContent = {
   ...industriesMeta,
   heroActions: [{ label: 'Assess My Project', href: '/contact' }],
   image: {
+    src: '/images/industries.png',
     alt: 'High-load Malaysian industrial facilities served by Solar + BESS',
     prompt:
       'Photorealistic wide shot of a Malaysian industrial estate — factory, data centre and cold-storage buildings with rooftop solar and battery storage cabinets, daytime, clean and modern.',

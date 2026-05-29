@@ -14,6 +14,7 @@ export const about: PageContent = {
     { label: 'What We Do', href: '/what-we-do' },
   ],
   image: {
+    src: '/images/about-team.png',
     alt: "Solunar's Malaysian engineering team reviewing a Solar + BESS project in Kuala Lumpur",
     prompt:
       'Photorealistic team of Malaysian Chinese engineers (mixed gender, business-casual) reviewing battery storage project plans in a modern Kuala Lumpur office, large windows with city view, natural light, candid and professional.',

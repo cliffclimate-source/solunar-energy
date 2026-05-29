@@ -11,6 +11,7 @@ export const commercialIndustrial: PageContent = {
   lead: 'Commercial and industrial (C&I) BESS is battery storage deployed at factories, buildings and industrial sites to cut peak demand charges, support self-consumption and improve energy resilience — and Solunar Energy supports these projects across Malaysia.',
   heroActions: [{ label: 'Assess My C&I BESS Project', href: '/contact' }],
   image: {
+    src: '/images/commercial-industrial-bess.png',
     alt: 'Commercial & industrial BESS cabinets beside a factory with rooftop solar in Malaysia',
     prompt:
       'Photorealistic commercial & industrial battery storage cabinets beside a Malaysian factory, rooftop solar panels visible, daytime, clean industrial, wide angle.',
@@ -84,6 +85,7 @@ export const utilityScale: PageContent = {
   lead: 'Utility-scale ESS farms are large battery storage assets that require strong technical planning, equipment selection, integration, monitoring and long-term O&M — and Solunar Energy supports developers, asset owners and EPCCs delivering them in Malaysia and Southeast Asia.',
   heroActions: [{ label: 'Discuss Utility-Scale ESS Support', href: '/contact' }],
   image: {
+    src: '/images/utility-scale-ess.png',
     alt: 'Rows of utility-scale BESS containers at a solar farm in Malaysia',
     prompt:
       'Photorealistic rows of utility-scale BESS containers at a large solar farm in Malaysia / Southeast Asia, transformers and switchgear, wide aerial perspective, clear blue sky.',
@@ -134,6 +136,7 @@ export const bessOm: PageContent = {
   lead: 'BESS O&M (operation and maintenance) is the ongoing monitoring, maintenance and safety management of a battery storage asset — and it differs from solar O&M because it must also track battery health, temperature, software controls and safety systems.',
   heroActions: [{ label: 'Request ESS O&M Support', href: '/contact' }],
   image: {
+    src: '/images/bess-om.png',
     alt: 'Engineer inspecting a BESS container during O&M in Malaysia',
     prompt:
       'Photorealistic Malaysian Chinese engineer in PPE inspecting a BESS container with a tablet, checking battery racks and cooling, O&M context, daytime, professional.',
@@ -204,6 +207,7 @@ export const bessSafety: PageContent = {
   lead: 'BESS safety is the set of design and operational measures — battery chemistry, BMS, thermal management, fire detection and suppression — that prevent and contain hazards in a battery storage system.',
   heroActions: [{ label: 'Review My BESS Safety Requirements', href: '/contact' }],
   image: {
+    src: '/images/bess-safety.png',
     alt: 'Fire detection and thermal management inside a BESS container',
     prompt:
       'Photorealistic interior of a BESS container showing fire detection sensors, suppression nozzles and thermal-management ducting, safety-focused, clean and well-lit.',
@@ -257,6 +261,7 @@ export const peakShaving: PageContent = {
   lead: 'Peak shaving is using a battery to discharge during high-load periods so a site draws less power from the grid at its peak — reducing maximum demand charges on the electricity bill.',
   heroActions: [{ label: 'Analyse My Peak Demand Savings', href: '/contact' }],
   image: {
+    src: '/images/peak-shaving.png',
     alt: 'Battery storage cabinet supporting peak demand at a Malaysian factory',
     prompt:
       'Photorealistic Malaysian factory exterior with rooftop solar and a battery energy storage cabinet, daytime, illustrating peak-demand management, clean and modern.',

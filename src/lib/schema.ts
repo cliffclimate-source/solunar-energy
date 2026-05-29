@@ -98,3 +98,21 @@ export function breadcrumbLd(crumbs: { name: string; path: string }[]): Json {
     })),
   };
 }
+
+export function productLd(p: {
+  name: string;
+  description: string;
+  image: string;
+  category: string;
+}): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    description: p.description,
+    category: p.category,
+    image: `${site.url}${p.image}`,
+    brand: { '@type': 'Brand', name: site.name },
+    manufacturer: { '@id': ORG_ID },
+  };
+}

@@ -40,6 +40,7 @@ export const standardPages: PageContent[] = [
 export const allPaths: string[] = [
   '/',
   ...standardPages.map((p) => p.slug),
+  '/products',
   industriesMeta.slug,
   knowledgeMeta.slug,
   ...articles.map((a) => `/knowledge-centre/${a.slug}`),

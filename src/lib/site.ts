@@ -76,6 +76,7 @@ export const primaryNav: NavEntry[] = [
       { label: 'PCS, EMS & Architecture', href: '/pcs-ems-system-integration', description: 'Coordinating the full storage system.' },
     ],
   },
+  { label: 'Products', href: '/products' },
   {
     label: 'Solutions',
     items: [
@@ -107,6 +108,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: 'Technology',
     links: [
+      { label: 'Products', href: '/products' },
       { label: 'BYD Battery Solutions', href: '/byd-battery-malaysia' },
       { label: 'GoodWe Inverters & Batteries', href: '/goodwe-inverter-malaysia' },
       { label: 'EVE BESS Integration', href: '/eve-bess-integration' },
