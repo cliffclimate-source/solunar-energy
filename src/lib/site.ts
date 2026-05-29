@@ -16,7 +16,7 @@ export const site = {
   locale: 'en_MY',
   contact: {
     // TODO: replace with real business contact details.
-    email: 'hello@solunar.com.my',
+    email: 'sales@solunar.my',
     phoneDisplay: '+60 3-0000 0000',
     phoneHref: 'tel:+60300000000',
   },

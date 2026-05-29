@@ -116,3 +116,22 @@ export function productLd(p: {
     manufacturer: { '@id': ORG_ID },
   };
 }
+
+export function personLd(p: {
+  name: string;
+  jobTitle: string;
+  image?: string;
+  alumniOf?: string[];
+}): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: p.name,
+    jobTitle: p.jobTitle,
+    worksFor: { '@id': ORG_ID, name: site.name },
+    ...(p.image ? { image: `${site.url}${p.image}` } : {}),
+    ...(p.alumniOf
+      ? { alumniOf: p.alumniOf.map((a) => ({ '@type': 'CollegeOrUniversity', name: a })) }
+      : {}),
+  };
+}

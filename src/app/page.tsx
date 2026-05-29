@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Check } from 'lucide-react';
 import { buildMetadata } from '@/lib/metadata';
 import { Container, Eyebrow, Section } from '@/components/ui/primitives';
@@ -61,15 +62,16 @@ export default function HomePage() {
                     </p>
                   ))}
                 </div>
-              </div>
-              <figure className="rounded-2xl border border-line bg-mist/60 p-8 lg:p-10">
-                <span className="font-display text-4xl leading-none text-accent" aria-hidden="true">
-                  &ldquo;
-                </span>
-                <blockquote className="mt-2 font-display text-2xl font-medium leading-snug tracking-tight text-balance text-ink sm:text-[1.7rem]">
+                <blockquote className="mt-6 border-l-2 border-accent pl-5 font-display text-xl font-medium leading-snug tracking-tight text-balance text-ink sm:text-2xl">
                   {homePositioning.quote}
                 </blockquote>
-              </figure>
+              </div>
+              <Figure
+                src="/images/home-positioning.png"
+                alt="Solunar partnering with an EPCC contractor at a solar-plus-storage site in Malaysia"
+                aspect="4 / 3"
+                tone="light"
+              />
             </div>
           </Reveal>
         </Container>
@@ -244,33 +246,55 @@ export default function HomePage() {
                     </p>
                   ))}
                 </div>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {homeOm.scope.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-line bg-paper px-3 py-1.5 text-xs text-ink"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 <Button href={homeOm.href} variant="outline" className="mt-7" withArrow>
                   Explore O&amp;M for ESS
                 </Button>
               </div>
             </Reveal>
             <Reveal delay={80}>
-              <div className="rounded-2xl border border-line bg-paper p-7 lg:p-8">
-                <p className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-muted">
-                  O&amp;M scope
-                </p>
-                <ul className="mt-5 grid gap-3.5">
-                  {homeOm.scope.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-accent-2"
-                        aria-hidden="true"
-                        strokeWidth={2.5}
-                      />
-                      <span className="text-[0.95rem] text-ink">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Figure
+                src="/images/home-controlroom.png"
+                alt="Energy control room monitoring battery storage state of charge and grid data"
+                aspect="4 / 3"
+                tone="light"
+              />
             </Reveal>
           </div>
         </Container>
       </Section>
+
+      {/* Why it matters — full-bleed image band */}
+      <section className="relative overflow-hidden bg-ink">
+        <Image
+          src="/images/home-why.png"
+          alt="Solar farm with battery storage at dusk and a city skyline in Malaysia"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
+        <Container className="relative py-24 text-center lg:py-32">
+          <span className="eyebrow text-accent-2">Why it matters</span>
+          <h2 className="mx-auto mt-4 max-w-3xl font-display text-display-sm font-semibold tracking-tight text-balance text-paper">
+            Energy storage is becoming critical infrastructure for Malaysia
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-paper/75">
+            Rising maximum-demand charges, fast-growing solar, grid constraints and the need for
+            resilience are turning BESS from optional to essential — for factories, developers and
+            the grid alike.
+          </p>
+        </Container>
+      </section>
 
       {/* Section 10 — Final CTA */}
       <CTABand

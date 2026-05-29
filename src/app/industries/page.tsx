@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { PageHero } from '@/components/layout/PageHero';
 import { Container, Section } from '@/components/ui/primitives';
 import { Reveal } from '@/components/ui/Reveal';
-import { IndustryCard } from '@/components/ui/Card';
 import { CTABand } from '@/components/ui/CTABand';
 import type { PageContent } from '@/content/types';
 import { industries, industriesMeta } from '@/content/pages/industries';
@@ -14,8 +14,6 @@ const industriesPage: PageContent = {
   image: {
     src: '/images/industries.png',
     alt: 'High-load Malaysian industrial facilities served by Solar + BESS',
-    prompt:
-      'Photorealistic wide shot of a Malaysian industrial estate — factory, data centre and cold-storage buildings with rooftop solar and battery storage cabinets, daytime, clean and modern.',
     aspect: '4 / 3',
   },
   blocks: [],
@@ -34,12 +32,24 @@ export default function Page() {
       <PageHero content={industriesPage} />
       <Section tone="paper">
         <Container>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry, i) => (
               <Reveal key={industry.title} delay={(i % 3) * 60} className="h-full">
-                <IndustryCard icon={industry.icon} title={industry.title}>
-                  {industry.text}
-                </IndustryCard>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-mist">
+                    <Image
+                      src={industry.image}
+                      alt={`${industry.title} — Solar + BESS in Malaysia`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="font-display text-lg font-semibold text-ink">{industry.title}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{industry.text}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -52,7 +62,6 @@ export default function Page() {
           { label: 'Assess My Project', href: '/contact' },
           { label: 'See Commercial & Industrial BESS', href: '/commercial-industrial-bess-malaysia' },
         ]}
-        tone="ink"
       />
     </>
   );

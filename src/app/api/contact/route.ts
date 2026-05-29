@@ -49,7 +49,8 @@ export async function POST(request: Request) {
   // No secrets are hardcoded. Until configured, submissions are logged server-side
   // and the form still returns success so the UX flow is testable.
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL;
+  // Enquiries route to Jimmy by default; override with CONTACT_EMAIL env if needed.
+  const to = process.env.CONTACT_EMAIL || 'jimmy@solunar.my';
   const submission = formatSubmission(data);
 
   if (!apiKey || !to) {
