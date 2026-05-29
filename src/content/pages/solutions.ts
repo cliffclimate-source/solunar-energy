@@ -326,6 +326,11 @@ export const powerExpansion: PageContent = {
   h1: 'Need More Power? BESS Can Support Growth in Malaysia',
   lead: 'When a site needs more power than its grid connection allows, a BESS can supply additional peak power on demand — supporting expansion while longer-term grid upgrades are planned.',
   heroActions: [{ label: 'Assess Power Expansion With BESS', href: '/contact' }],
+  image: {
+    src: '/images/power-expansion.png',
+    alt: 'Factory and data centre with battery storage and EV charging supporting power expansion in Malaysia',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'power expansion BESS Malaysia',
   schema: { type: 'Service', serviceType: 'Power expansion with BESS' },
   blocks: [
@@ -373,6 +378,11 @@ export const solarBessDevelopers: PageContent = {
   h1: 'Storage Technology Support for Developers and Asset Owners in Malaysia',
   lead: 'For developers and asset owners, adding BESS to a renewable asset increases its value through flexibility, storage capability and grid support — and Solunar Energy provides the technology and integration layer to make it bankable.',
   heroActions: [{ label: 'Plan Your ESS Asset With Solunar', href: '/contact' }],
+  image: {
+    src: '/images/solar-bess-developers.png',
+    alt: 'A large solar-plus-storage farm in Malaysia at golden hour',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'Solar BESS for developers Malaysia',
   schema: { type: 'Service', serviceType: 'Solar + BESS support for developers and asset owners' },
   blocks: [
@@ -429,6 +439,11 @@ export const localAssembly: PageContent = {
   h1: 'Building Towards Localised BESS Assembly and Support in Malaysia',
   lead: 'Solunar Energy is building towards a localised clean-energy technology platform for Malaysia and Southeast Asia, including future BESS assembly and local technical support.',
   heroActions: [{ label: 'Explore Local Assembly Partnership', href: '/contact' }],
+  image: {
+    src: '/images/local-assembly.png',
+    alt: 'Technicians assembling battery energy storage cabinets on a factory floor in Malaysia',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'local BESS assembly Malaysia',
   schema: { type: 'Service', serviceType: 'Future local BESS assembly and support' },
   blocks: [

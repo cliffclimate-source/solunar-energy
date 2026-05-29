@@ -70,9 +70,9 @@ export default function Page() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover"
                     />
-                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-paper/85 px-2.5 py-1.5 ring-1 ring-line backdrop-blur">
-                      <BrandMark className="h-3.5 w-auto" />
-                      <span className="font-logo text-[0.78rem] font-bold uppercase tracking-wide text-ink">
+                    <span className="absolute left-1/2 top-5 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-paper/90 px-4 py-2 shadow-sm ring-1 ring-line backdrop-blur">
+                      <BrandMark className="h-4 w-auto" />
+                      <span className="font-logo text-[0.95rem] font-bold uppercase tracking-wide text-ink">
                         Solunar
                       </span>
                     </span>

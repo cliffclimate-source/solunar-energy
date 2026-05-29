@@ -88,6 +88,11 @@ export const whatWeDo: PageContent = {
   eyebrow: 'What We Do',
   h1: 'BESS Technology Distribution, Integration and Long-Term Support',
   lead: 'Solunar Energy provides three things to the Solar + BESS market in Malaysia: technology distribution, system integration, and long-term O&M support.',
+  image: {
+    src: '/images/what-we-do.png',
+    alt: 'Solar panels and a battery storage cabinet with an engineer at a Malaysian commercial site',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'BESS distribution and integration Malaysia',
   schema: { type: 'Service', serviceType: 'BESS technology distribution and system integration' },
   blocks: [
@@ -154,6 +159,11 @@ export const bessPartnerForEpcc: PageContent = {
   h1: "We're Not an EPCC. We're the BESS Technology Partner Behind the EPCC.",
   lead: 'Solunar Energy is designed to complement EPCC companies in Malaysia, not compete with them. EPCCs keep the client relationship and site execution; Solunar supplies the battery storage technology layer.',
   heroActions: [{ label: 'Work With Solunar as Your BESS Partner', href: '/contact' }],
+  image: {
+    src: '/images/bess-partner-epcc.png',
+    alt: 'An EPCC contractor and a Solunar specialist collaborating at a solar-plus-storage site in Malaysia',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'solar EPCC BESS partner',
   schema: { type: 'Service', serviceType: 'BESS technology partner for EPCC companies' },
   blocks: [
@@ -206,6 +216,11 @@ export const epccPartnerProgramme: PageContent = {
   h1: 'Helping EPCC Companies Add BESS Without Building Everything In-House',
   lead: 'The Solunar EPCC Partner Programme helps solar contractors, electrical contractors and renewable energy companies in Malaysia enter the BESS market with reduced technical risk.',
   heroActions: [{ label: 'Become a Solunar EPCC Partner', href: '/contact' }],
+  image: {
+    src: '/images/epcc-programme.png',
+    alt: 'Renewable-energy professionals in a Solunar EPCC partner programme session',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'solar EPCC BESS partner programme Malaysia',
   schema: { type: 'Service', serviceType: 'EPCC partner programme for Solar + BESS' },
   blocks: [

@@ -7,6 +7,7 @@ import { ComparisonTable } from '@/components/ui/ComparisonTable';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { CTABand } from '@/components/ui/CTABand';
 import { Stat } from '@/components/ui/Stat';
+import { Figure } from '@/components/ui/Figure';
 import type { Block, ListItem } from '@/content/types';
 
 type BlockOf<K extends Block['kind']> = Extract<Block, { kind: K }>;
@@ -268,6 +269,16 @@ function renderInner(block: Exclude<Block, BlockOf<'cta'>>) {
       return <Stats block={block} />;
     case 'note':
       return <Note text={block.text} />;
+    case 'image':
+      return (
+        <Figure
+          src={block.src}
+          alt={block.alt}
+          aspect={block.aspect ?? '16 / 9'}
+          caption={block.caption}
+          sizes="(min-width: 1024px) 75vw, 100vw"
+        />
+      );
     case 'faq':
       return <Faq block={block} />;
   }

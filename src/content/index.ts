@@ -41,6 +41,7 @@ export const allPaths: string[] = [
   '/',
   ...standardPages.map((p) => p.slug),
   '/products',
+  '/byd-utility-bess',
   industriesMeta.slug,
   knowledgeMeta.slug,
   ...articles.map((a) => `/knowledge-centre/${a.slug}`),

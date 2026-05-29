@@ -11,6 +11,11 @@ import { articles, knowledgeMeta } from '@/content/pages/knowledge';
 
 const knowledgePage: PageContent = {
   ...knowledgeMeta,
+  image: {
+    src: '/images/knowledge-centre.png',
+    alt: 'LFP battery modules beside an energy-management dashboard',
+    aspect: '4 / 3',
+  },
   blocks: [],
   schema: { type: 'CollectionPage' },
 };

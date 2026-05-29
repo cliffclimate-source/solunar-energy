@@ -66,6 +66,7 @@ export type Block =
       items: { title: string; text?: string }[];
     }
   | { kind: 'note'; text: string }
+  | { kind: 'image'; src?: string; alt: string; aspect?: string; caption?: string }
   | { kind: 'faq'; id?: string; heading?: string; items: FaqItem[] }
   | {
       kind: 'cta';
