@@ -3,12 +3,16 @@ import { Button } from '@/components/ui/Button';
 import { Figure } from '@/components/ui/Figure';
 import { homeHero } from '@/content/home';
 
-/** Light, centered homepage hero (Apple-style): headline, CTAs, product image. */
+/** Light, centered homepage hero with Sigenergy-style energy glows. */
 export function Hero() {
   return (
-    <section className="bg-paper">
-      <Container className="pb-14 pt-28 text-center sm:pt-32 lg:pb-20 lg:pt-40">
-        <span className="eyebrow">{homeHero.eyebrow}</span>
+    <section className="relative overflow-hidden bg-paper">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-[-12%] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" />
+        <div className="absolute right-[6%] top-[16%] h-72 w-72 rounded-full bg-accent-2/10 blur-[110px]" />
+      </div>
+      <Container className="relative pb-14 pt-28 text-center sm:pt-32 lg:pb-20 lg:pt-40">
+        <span className="eyebrow text-gradient">{homeHero.eyebrow}</span>
         <h1 className="mx-auto mt-4 max-w-4xl font-display text-display font-semibold tracking-tight text-ink">
           {homeHero.h1}
         </h1>
@@ -28,7 +32,11 @@ export function Hero() {
             </Button>
           ))}
         </div>
-        <div className="mx-auto mt-14 max-w-5xl">
+        <div className="relative mx-auto mt-14 max-w-5xl">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-accent/15 via-transparent to-accent-2/15 blur-2xl"
+          />
           <Figure
             src="/images/home-bess-containers.png"
             aspect="16 / 9"

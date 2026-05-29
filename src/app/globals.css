@@ -12,7 +12,7 @@
   --line: 210 210 215; /* #D2D2D7 hairline borders */
   --muted: 110 110 115; /* #6E6E73 secondary text */
   --accent: 232 163 61; /* #E8A33D solar amber — single brand accent */
-  --accent-2: 232 163 61; /* unified on amber for a monochrome accent */
+  --accent-2: 20 184 166; /* #14B8A6 energy teal (Sigenergy-inspired, for technical/data accents) */
   --success: 48 168 95; /* #30A85F */
 }
 
@@ -57,6 +57,14 @@
   /* Apple-style eyebrow: small, semibold, muted — no mono, no rule. */
   .eyebrow {
     @apply text-[0.8125rem] font-semibold text-muted;
+  }
+
+  /* Amber → energy-teal gradient text for kickers and accents. */
+  .text-gradient {
+    background-image: linear-gradient(100deg, rgb(var(--accent)), rgb(var(--accent-2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .prose-body {

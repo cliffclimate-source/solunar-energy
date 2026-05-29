@@ -15,8 +15,12 @@ export function CTABand({
   tone?: 'ink' | 'amber' | 'mist';
 }) {
   return (
-    <section className="bg-mist">
-      <Container className="py-16 text-center lg:py-24">
+    <section className="relative overflow-hidden bg-mist">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-0 h-64 w-[42rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[110px]" />
+        <div className="absolute bottom-0 right-1/4 h-56 w-72 rounded-full bg-accent-2/10 blur-[90px]" />
+      </div>
+      <Container className="relative py-16 text-center lg:py-24">
         <h2 className="mx-auto max-w-3xl font-display text-display-sm font-semibold tracking-tight text-ink">
           {heading}
         </h2>

@@ -11,8 +11,12 @@ import type { PageContent } from '@/content/types';
 export function PageHero({ content }: { content: PageContent }) {
   const hasImage = Boolean(content.image);
   return (
-    <section className="bg-paper">
-      <Container className="pb-12 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
+    <section className="relative overflow-hidden bg-paper">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-accent/[0.06] blur-[110px]"
+      />
+      <Container className="relative pb-12 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
         <div className={hasImage ? 'grid items-center gap-10 lg:grid-cols-2 lg:gap-16' : 'max-w-3xl'}>
           <div>
             <Breadcrumbs

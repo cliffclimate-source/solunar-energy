@@ -14,6 +14,7 @@ import { getIcon } from '@/components/ui/icons';
 import { Hero } from '@/components/home/Hero';
 import { BrandStrip } from '@/components/home/BrandStrip';
 import { KLSkyline } from '@/components/visuals/Skyline';
+import { GridGlow } from '@/components/visuals/Decor';
 import {
   homeFaqs,
   homeFinalCta,
@@ -170,8 +171,9 @@ export default function HomePage() {
       </Section>
 
       {/* Sections 5–8 — Technology & integration (dark emphasis) */}
-      <Section tone="ink">
-        <Container>
+      <Section tone="ink" className="relative overflow-hidden">
+        <GridGlow />
+        <Container className="relative">
           <Reveal>
             <div className="max-w-2xl">
               <Eyebrow className="text-accent-2">{homeTechnology.eyebrow}</Eyebrow>
