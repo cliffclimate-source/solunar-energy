@@ -10,6 +10,12 @@ export const commercialIndustrial: PageContent = {
   h1: 'Commercial & Industrial BESS for Factories, Buildings and Industrial Users in Malaysia',
   lead: 'Commercial and industrial (C&I) BESS is battery storage deployed at factories, buildings and industrial sites to cut peak demand charges, support self-consumption and improve energy resilience — and Solunar Energy supports these projects across Malaysia.',
   heroActions: [{ label: 'Assess My C&I BESS Project', href: '/contact' }],
+  image: {
+    alt: 'Commercial & industrial BESS cabinets beside a factory with rooftop solar in Malaysia',
+    prompt:
+      'Photorealistic commercial & industrial battery storage cabinets beside a Malaysian factory, rooftop solar panels visible, daytime, clean industrial, wide angle.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'commercial BESS Malaysia',
   schema: { type: 'Service', serviceType: 'Commercial and industrial BESS support' },
   blocks: [
@@ -77,6 +83,12 @@ export const utilityScale: PageContent = {
   h1: 'Technology Support for Utility-Scale Energy Storage Assets in Malaysia',
   lead: 'Utility-scale ESS farms are large battery storage assets that require strong technical planning, equipment selection, integration, monitoring and long-term O&M — and Solunar Energy supports developers, asset owners and EPCCs delivering them in Malaysia and Southeast Asia.',
   heroActions: [{ label: 'Discuss Utility-Scale ESS Support', href: '/contact' }],
+  image: {
+    alt: 'Rows of utility-scale BESS containers at a solar farm in Malaysia',
+    prompt:
+      'Photorealistic rows of utility-scale BESS containers at a large solar farm in Malaysia / Southeast Asia, transformers and switchgear, wide aerial perspective, clear blue sky.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'utility-scale ESS Malaysia',
   schema: { type: 'Service', serviceType: 'Utility-scale ESS technology support' },
   blocks: [
@@ -121,6 +133,12 @@ export const bessOm: PageContent = {
   h1: 'O&M for Commercial and Utility-Scale ESS in Malaysia',
   lead: 'BESS O&M (operation and maintenance) is the ongoing monitoring, maintenance and safety management of a battery storage asset — and it differs from solar O&M because it must also track battery health, temperature, software controls and safety systems.',
   heroActions: [{ label: 'Request ESS O&M Support', href: '/contact' }],
+  image: {
+    alt: 'Engineer inspecting a BESS container during O&M in Malaysia',
+    prompt:
+      'Photorealistic Malaysian Chinese engineer in PPE inspecting a BESS container with a tablet, checking battery racks and cooling, O&M context, daytime, professional.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'BESS O&M Malaysia',
   schema: { type: 'Service', serviceType: 'BESS operation and maintenance (O&M)' },
   blocks: [
@@ -185,6 +203,12 @@ export const bessSafety: PageContent = {
   h1: 'Safety Is the Foundation of Every BESS Project',
   lead: 'BESS safety is the set of design and operational measures — battery chemistry, BMS, thermal management, fire detection and suppression — that prevent and contain hazards in a battery storage system.',
   heroActions: [{ label: 'Review My BESS Safety Requirements', href: '/contact' }],
+  image: {
+    alt: 'Fire detection and thermal management inside a BESS container',
+    prompt:
+      'Photorealistic interior of a BESS container showing fire detection sensors, suppression nozzles and thermal-management ducting, safety-focused, clean and well-lit.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'BESS safety Malaysia',
   schema: { type: 'Service', serviceType: 'BESS safety and reliability review' },
   blocks: [
@@ -232,6 +256,12 @@ export const peakShaving: PageContent = {
   h1: 'Reduce Maximum Demand Charges With Battery Storage in Malaysia',
   lead: 'Peak shaving is using a battery to discharge during high-load periods so a site draws less power from the grid at its peak — reducing maximum demand charges on the electricity bill.',
   heroActions: [{ label: 'Analyse My Peak Demand Savings', href: '/contact' }],
+  image: {
+    alt: 'Battery storage cabinet supporting peak demand at a Malaysian factory',
+    prompt:
+      'Photorealistic Malaysian factory exterior with rooftop solar and a battery energy storage cabinet, daytime, illustrating peak-demand management, clean and modern.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'maximum demand peak shaving Malaysia',
   schema: { type: 'Service', serviceType: 'Maximum demand peak shaving with BESS' },
   blocks: [

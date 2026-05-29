@@ -9,8 +9,11 @@ import { ServiceCard } from '@/components/ui/Card';
 import { ComparisonTable } from '@/components/ui/ComparisonTable';
 import { CTABand } from '@/components/ui/CTABand';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
+import { Figure } from '@/components/ui/Figure';
 import { getIcon } from '@/components/ui/icons';
 import { Hero } from '@/components/home/Hero';
+import { BrandStrip } from '@/components/home/BrandStrip';
+import { KLSkyline } from '@/components/visuals/Skyline';
 import {
   homeFaqs,
   homeFinalCta,
@@ -29,6 +32,13 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const h2 = 'font-display text-display-sm font-semibold tracking-tight text-balance';
+
+const malaysiaPoints = [
+  'Kuala Lumpur–based team',
+  'Malaysia & Southeast Asia coverage',
+  'EPCC, developer & asset-owner focus',
+  'Building towards local BESS assembly',
+];
 
 export default function HomePage() {
   return (
@@ -64,7 +74,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Section 3 — What Solunar Provides */}
+      {/* Section 3 — What Solunar Provides + technologies */}
       <Section tone="mist">
         <Container>
           <Reveal>
@@ -83,6 +93,16 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-14">
+            <div className="border-t border-line pt-10">
+              <p className="text-center font-mono text-[0.65rem] uppercase tracking-eyebrow text-muted">
+                Technologies we integrate
+              </p>
+              <div className="mt-6">
+                <BrandStrip />
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
@@ -106,6 +126,49 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Malaysia context band */}
+      <Section tone="mist">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal>
+              <div>
+                <Eyebrow>Malaysia &amp; Southeast Asia</Eyebrow>
+                <h2 className={`mt-4 text-ink ${h2}`}>Built for the Malaysian energy market</h2>
+                <p className="mt-5 prose-body">
+                  Solunar Energy is based in Kuala Lumpur and supports Solar + BESS projects across
+                  Malaysia and Southeast Asia — for EPCC companies, developers and asset owners.
+                </p>
+                <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                  {malaysiaPoints.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-accent-2"
+                        aria-hidden="true"
+                        strokeWidth={2.5}
+                      />
+                      <span className="text-[0.95rem] text-ink">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-paper to-mist">
+                <div
+                  className="absolute right-10 top-9 h-14 w-14 rounded-full bg-accent/25 blur-xl"
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute right-12 top-11 h-10 w-10 rounded-full bg-accent"
+                  aria-hidden="true"
+                />
+                <KLSkyline className="relative mt-24 px-6 text-ink/85" />
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
       {/* Sections 5–8 — Technology & integration (dark emphasis) */}
       <Section tone="ink">
         <Container>
@@ -115,7 +178,16 @@ export default function HomePage() {
               <h2 className={`mt-4 text-paper ${h2}`}>{homeTechnology.heading}</h2>
             </div>
           </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <Reveal className="mt-12">
+            <Figure
+              tone="dark"
+              aspect="16 / 7"
+              alt="Battery energy storage containers integrated with PCS and EMS at a site in Malaysia"
+              caption="Battery, PCS and EMS integrated and monitored as one system."
+              sizes="(min-width: 1024px) 80vw, 100vw"
+            />
+          </Reveal>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {homeTechnology.items.map((item, i) => {
               const Icon = getIcon(item.icon);
               return (

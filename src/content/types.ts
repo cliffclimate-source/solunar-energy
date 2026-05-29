@@ -10,6 +10,15 @@ export type ListItem = string | { title: string; text: string };
 
 export type Action = { label: string; href: string };
 
+export type PageImage = {
+  /** Path under /public (e.g. "/images/byd-battery.jpg"). Omit for placeholder. */
+  src?: string;
+  alt: string;
+  /** AI-generation prompt for this slot (documented in public/images/README.md). */
+  prompt?: string;
+  aspect?: string;
+};
+
 export type Block =
   | {
       kind: 'prose';
@@ -84,6 +93,7 @@ export type PageContent = {
   lead: string;
   intro?: string[];
   heroActions?: Action[];
+  image?: PageImage;
   blocks: Block[];
   primaryKeyword?: string;
   schema: PageSchema;

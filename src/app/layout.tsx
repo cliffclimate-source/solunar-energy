@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Space_Grotesk, Inter, IBM_Plex_Mono, Quicksand } from 'next/font/google';
+import { Inter, Quicksand } from 'next/font/google';
 import { site } from '@/lib/site';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -7,24 +7,10 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationLd, localBusinessLd } from '@/lib/schema';
 import './globals.css';
 
-const display = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
 const sans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
-  weight: ['400', '500', '600'],
 });
 
 // Brand wordmark typeface (monoline geometric) — matches the Solunar logo.
@@ -64,7 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable} ${logo.variable}`}>
+    <html lang="en" className={`${sans.variable} ${logo.variable}`}>
       <body>
         <JsonLd data={[organizationLd(), localBusinessLd()]} />
         <a

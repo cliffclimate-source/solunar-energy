@@ -20,10 +20,28 @@ const config: Config = {
         success: 'rgb(var(--success) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['var(--font-display)', 'var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
-        logo: ['var(--font-logo)', 'var(--font-display)', 'system-ui', 'sans-serif'],
+        // Apple-style system stack (SF Pro on Apple devices, Inter as the
+        // cross-platform fallback).
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Text"',
+          'var(--font-sans)',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        display: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Display"',
+          'var(--font-sans)',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        mono: ['ui-monospace', 'SFMono-Regular', '"SF Mono"', 'Menlo', 'monospace'],
+        logo: ['var(--font-logo)', '-apple-system', '"SF Pro Display"', 'sans-serif'],
       },
       maxWidth: {
         container: '1280px',

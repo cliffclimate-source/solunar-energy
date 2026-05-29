@@ -11,6 +11,12 @@ import { industries, industriesMeta } from '@/content/pages/industries';
 const industriesPage: PageContent = {
   ...industriesMeta,
   heroActions: [{ label: 'Assess My Project', href: '/contact' }],
+  image: {
+    alt: 'High-load Malaysian industrial facilities served by Solar + BESS',
+    prompt:
+      'Photorealistic wide shot of a Malaysian industrial estate — factory, data centre and cold-storage buildings with rooftop solar and battery storage cabinets, daytime, clean and modern.',
+    aspect: '4 / 3',
+  },
   blocks: [],
   schema: { type: 'CollectionPage' },
 };

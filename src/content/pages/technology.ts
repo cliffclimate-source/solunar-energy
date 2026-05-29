@@ -10,6 +10,12 @@ export const bydBattery: PageContent = {
   h1: 'BYD Battery Solutions for Safety-Focused Energy Storage in Malaysia',
   lead: 'BYD is a globally recognised battery technology company, and Solunar Energy integrates selected BYD battery solutions for Malaysian energy storage projects where safety, reliability and long-term performance are critical.',
   heroActions: [{ label: 'Discuss BYD Battery Integration', href: '/contact' }],
+  image: {
+    alt: 'BYD Battery-Box LFP storage cabinets at a commercial site in Malaysia',
+    prompt:
+      'Photorealistic BYD Battery-Box LFP battery storage cabinets in a clean electrical room at a commercial facility in Malaysia, neat cabling, safety signage, bright industrial lighting, wide angle.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'BYD battery Malaysia',
   schema: { type: 'Service', serviceType: 'BYD battery solution integration', brands: ['BYD'] },
   blocks: [
@@ -73,6 +79,12 @@ export const goodweInverter: PageContent = {
   h1: 'GoodWe Inverters and Batteries for Solar + Storage Projects in Malaysia',
   lead: 'Solunar Energy is a distributor for GoodWe inverters and battery solutions in Malaysia, covering solar, hybrid and energy storage inverter applications.',
   heroActions: [{ label: 'Request GoodWe Product Support', href: '/contact' }],
+  image: {
+    alt: 'GoodWe hybrid inverter installed at a Malaysian commercial site',
+    prompt:
+      'Photorealistic GoodWe hybrid solar inverter wall-mounted in a tidy plant room at a Malaysian commercial building, neat conduits, daytime, professional and clean.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'GoodWe inverter Malaysia',
   schema: { type: 'Service', serviceType: 'GoodWe inverter and battery distribution', brands: ['GoodWe'] },
   blocks: [
@@ -127,6 +139,12 @@ export const eveBess: PageContent = {
   h1: 'EVE BESS Integration for Selected Energy Storage Projects in Malaysia',
   lead: 'Solunar Energy can integrate EVE BESS solutions in Malaysia depending on project needs, technical configuration and commercial requirements.',
   heroActions: [{ label: 'Assess EVE BESS Suitability', href: '/contact' }],
+  image: {
+    alt: 'EVE LFP battery modules inside a containerised energy storage system',
+    prompt:
+      'Photorealistic EVE LFP battery modules and racks inside a containerised BESS with cooling and BMS units, clean industrial interior, Southeast Asia.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'EVE BESS Malaysia',
   schema: { type: 'Service', serviceType: 'EVE BESS integration', brands: ['EVE'] },
   blocks: [
@@ -184,6 +202,12 @@ export const multiBrand: PageContent = {
   h1: 'Not Every Project Needs the Same Battery Brand',
   lead: 'Solunar Energy integrates multiple BESS brands — including BYD, GoodWe and EVE — and selects the right configuration for each project rather than forcing one technology on every site.',
   heroActions: [{ label: 'Recommend the Right Architecture', href: '/contact' }],
+  image: {
+    alt: 'Battery racks, PCS and EMS integrated into one storage system in Malaysia',
+    prompt:
+      'Photorealistic mixed-brand BESS integration — battery racks, a PCS cabinet and an EMS controller wired together, a Malaysian Chinese engineer reviewing on a tablet, clean industrial setting in Malaysia.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'multi-brand BESS integration Malaysia',
   schema: {
     type: 'Service',
@@ -245,6 +269,12 @@ export const pcsEms: PageContent = {
   h1: 'BESS Integration Is More Than Buying a Battery',
   lead: 'A complete BESS project requires proper integration of hardware, software and electrical infrastructure — the battery is just one component, and Solunar Energy coordinates the whole system.',
   heroActions: [{ label: 'Request System Architecture Support', href: '/contact' }],
+  image: {
+    alt: 'PCS and EMS cabinets with a SCADA screen in a BESS electrical room',
+    prompt:
+      'Photorealistic power conversion system (PCS) cabinets and an EMS control panel with a SCADA monitoring screen in a tidy BESS electrical room, Malaysia, professional lighting.',
+    aspect: '4 / 3',
+  },
   primaryKeyword: 'PCS EMS integration Malaysia',
   schema: { type: 'Service', serviceType: 'PCS and EMS system integration' },
   blocks: [
