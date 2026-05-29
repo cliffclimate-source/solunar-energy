@@ -78,6 +78,7 @@ export type PageContent = {
   seoTitle: string;
   metaDescription: string;
   navLabel: string;
+  parent?: { name: string; path: string };
   eyebrow: string;
   h1: string;
   lead: string;

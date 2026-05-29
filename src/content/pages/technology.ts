@@ -1,0 +1,303 @@
+import type { PageContent } from '@/content/types';
+
+export const bydBattery: PageContent = {
+  slug: '/byd-battery-malaysia',
+  seoTitle: 'BYD Battery Malaysia | Safety-Focused LFP BESS | Solunar',
+  metaDescription:
+    'Solunar integrates selected BYD battery solutions in Malaysia — cobalt-free LFP chemistry positioned by BYD for safety, cycle life and performance.',
+  navLabel: 'BYD Battery Solutions',
+  eyebrow: 'Technology · BYD',
+  h1: 'BYD Battery Solutions for Safety-Focused Energy Storage in Malaysia',
+  lead: 'BYD is a globally recognised battery technology company, and Solunar Energy integrates selected BYD battery solutions for Malaysian energy storage projects where safety, reliability and long-term performance are critical.',
+  heroActions: [{ label: 'Discuss BYD Battery Integration', href: '/contact' }],
+  primaryKeyword: 'BYD battery Malaysia',
+  schema: { type: 'Service', serviceType: 'BYD battery solution integration', brands: ['BYD'] },
+  blocks: [
+    {
+      kind: 'prose',
+      heading: 'Why BYD battery technology matters for BESS projects',
+      paragraphs: [
+        "BYD's LFP battery chemistry is positioned by BYD around safety, cycle life and power performance, and its Blade Battery is marketed around safety, strength, long life and performance.",
+        'BYD Battery-Box uses cobalt-free Lithium Iron Phosphate (LFP) chemistry — a chemistry widely chosen for energy storage where long-term safety and stability matter.',
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'check',
+      columns: 1,
+      heading: 'Five reasons BYD matters for storage assets',
+      lead: 'For commercial and utility-scale BESS projects, BYD battery solutions matter across five dimensions:',
+      items: [
+        'Safety-focused LFP chemistry widely used in storage',
+        'Strong brand confidence for asset owners and investors',
+        'Long-term storage relevance for commercial and utility-scale assets',
+        'Credibility for bankable Solar + BESS proposals',
+        'Integration potential with PCS, EMS, monitoring and protection',
+      ],
+      note: 'Solunar supports selected BYD battery solution integration for projects where the technical and commercial configuration is suitable.',
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'Is BYD battery chemistry safe?',
+          answer:
+            'BYD uses cobalt-free LFP chemistry, which BYD positions around safety and stability — a chemistry widely chosen for energy storage. Site safety still depends on full system design and integration.',
+        },
+        {
+          question: 'Does Solunar sell BYD directly?',
+          answer:
+            'Solunar integrates selected BYD battery solutions where the technical and commercial configuration is suitable; final configuration is subject to brand approval and project requirements.',
+        },
+      ],
+    },
+    {
+      kind: 'cta',
+      heading: 'Considering BYD battery solutions for a Malaysian project?',
+      text: 'Solunar can assess whether selected BYD battery integration suits your safety, bankability and performance requirements.',
+      actions: [
+        { label: 'Discuss BYD Battery Integration', href: '/contact' },
+        { label: 'Compare BESS Brands', href: '/multi-brand-bess-integration' },
+      ],
+    },
+  ],
+};
+
+export const goodweInverter: PageContent = {
+  slug: '/goodwe-inverter-malaysia',
+  seoTitle: 'GoodWe Inverter Malaysia | Solar + Storage | Solunar Energy',
+  metaDescription:
+    'Solunar distributes GoodWe inverters and batteries in Malaysia — solar, hybrid and energy storage inverters for Solar + BESS applications.',
+  navLabel: 'GoodWe Inverters & Batteries',
+  eyebrow: 'Technology · GoodWe',
+  h1: 'GoodWe Inverters and Batteries for Solar + Storage Projects in Malaysia',
+  lead: 'Solunar Energy is a distributor for GoodWe inverters and battery solutions in Malaysia, covering solar, hybrid and energy storage inverter applications.',
+  heroActions: [{ label: 'Request GoodWe Product Support', href: '/contact' }],
+  primaryKeyword: 'GoodWe inverter Malaysia',
+  schema: { type: 'Service', serviceType: 'GoodWe inverter and battery distribution', brands: ['GoodWe'] },
+  blocks: [
+    {
+      kind: 'prose',
+      heading: 'Why inverters are central to Solar + BESS',
+      paragraphs: [
+        'GoodWe is a global solar inverter and energy storage technology company serving residential and business markets, and its products are central to converting, managing and optimising energy in Solar + BESS systems.',
+        'Inverters are the bridge between solar generation, battery storage and customer load — which is why GoodWe sits at the heart of many solar-plus-storage configurations.',
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'inline',
+      heading: 'What Solunar distributes',
+      lead: 'Solunar distributes GoodWe across the solar and storage range:',
+      items: [
+        'Solar inverters',
+        'Hybrid inverters',
+        'Energy storage inverters',
+        'Residential battery solutions',
+        'Commercial battery solutions',
+        'Monitoring and smart energy applications',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'Where GoodWe fits',
+      paragraphs: [
+        'GoodWe suits flexible solar-plus-storage configurations, distributed energy projects, self-consumption and retrofit applications, including AC-coupled retrofit inverters and low-voltage or high-voltage battery options.',
+      ],
+    },
+    {
+      kind: 'cta',
+      heading: 'Need GoodWe inverters or batteries for a project?',
+      text: 'Solunar provides GoodWe product support, sizing input and integration guidance for suitable Solar + BESS applications.',
+      actions: [
+        { label: 'Request GoodWe Product Support', href: '/contact' },
+        { label: 'See PCS & EMS Integration', href: '/pcs-ems-system-integration' },
+      ],
+    },
+  ],
+};
+
+export const eveBess: PageContent = {
+  slug: '/eve-bess-integration',
+  seoTitle: 'EVE BESS Integration Malaysia | LFP Storage | Solunar',
+  metaDescription:
+    'Solunar integrates EVE BESS solutions in Malaysia where suitable — LFP technology with thermal management, safety protection and cloud monitoring.',
+  navLabel: 'EVE BESS Integration',
+  eyebrow: 'Technology · EVE',
+  h1: 'EVE BESS Integration for Selected Energy Storage Projects in Malaysia',
+  lead: 'Solunar Energy can integrate EVE BESS solutions in Malaysia depending on project needs, technical configuration and commercial requirements.',
+  heroActions: [{ label: 'Assess EVE BESS Suitability', href: '/contact' }],
+  primaryKeyword: 'EVE BESS Malaysia',
+  schema: { type: 'Service', serviceType: 'EVE BESS integration', brands: ['EVE'] },
+  blocks: [
+    {
+      kind: 'prose',
+      heading: 'What EVE BESS emphasises',
+      paragraphs: [
+        "EVE Energy's storage solutions emphasise LFP battery technology, thermal simulation and verification, thermal isolation, system-level safety protection, thermal runaway detection and cloud monitoring.",
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'check',
+      columns: 1,
+      heading: 'When EVE BESS may suit a project',
+      lead: 'EVE may suit projects that need one or more of the following:',
+      items: [
+        'LFP technology',
+        'Proven storage-system experience',
+        'Thermal-management and safety design',
+        'Cloud monitoring',
+        'An alternative configuration for specific commercial and utility-scale applications',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'How Solunar integrates EVE BESS',
+      paragraphs: [
+        'Solunar evaluates whether EVE BESS fits the project, then coordinates integration with PCS, EMS, site electrical systems and O&M.',
+      ],
+    },
+    {
+      kind: 'note',
+      text: 'Solunar can integrate different BESS platforms, including EVE BESS, depending on project requirements. Final technical configuration is subject to project design, brand approval, commercial terms and site requirements.',
+    },
+    {
+      kind: 'cta',
+      heading: 'Wondering whether EVE BESS fits your project?',
+      text: 'Solunar assesses EVE BESS suitability against your capacity, safety and commercial requirements before integration.',
+      actions: [
+        { label: 'Assess EVE BESS Suitability', href: '/contact' },
+        { label: 'Explore Multi-Brand Integration', href: '/multi-brand-bess-integration' },
+      ],
+    },
+  ],
+};
+
+export const multiBrand: PageContent = {
+  slug: '/multi-brand-bess-integration',
+  seoTitle: 'Multi-Brand BESS Integration Malaysia | Solunar Energy',
+  metaDescription:
+    "Not every project needs the same battery. Solunar integrates BYD, GoodWe, EVE and other BESS platforms based on your project's real requirements.",
+  navLabel: 'Multi-Brand Integration',
+  eyebrow: 'Technology · Multi-Brand',
+  h1: 'Not Every Project Needs the Same Battery Brand',
+  lead: 'Solunar Energy integrates multiple BESS brands — including BYD, GoodWe and EVE — and selects the right configuration for each project rather than forcing one technology on every site.',
+  heroActions: [{ label: 'Recommend the Right Architecture', href: '/contact' }],
+  primaryKeyword: 'multi-brand BESS integration Malaysia',
+  schema: {
+    type: 'Service',
+    serviceType: 'Multi-brand BESS integration',
+    brands: ['BYD', 'GoodWe', 'EVE'],
+  },
+  blocks: [
+    {
+      kind: 'prose',
+      heading: 'Different projects, different systems',
+      paragraphs: [
+        'A factory peak-shaving project needs a different system from a utility-scale ESS farm, and a data-centre resilience project differs from a solar self-consumption project.',
+        "Solunar's role is to help partners select and integrate the most suitable solution for each site — we are not locked to one technical pathway.",
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'inline',
+      heading: 'How Solunar selects the architecture',
+      lead: 'Solunar selects and integrates the right architecture based on the real requirements of each project:',
+      items: [
+        'Project capacity',
+        'Discharge duration',
+        'Cycle requirements',
+        'Safety requirements',
+        'Available space',
+        'Cooling needs',
+        'Warranty expectations',
+        'Bankability',
+        'Budget',
+        'Delivery timeline',
+        'O&M requirements',
+        'Grid requirements',
+      ],
+    },
+    {
+      kind: 'pullquote',
+      text: 'We are not locked to one technical pathway. Every project gets the architecture it actually needs.',
+    },
+    {
+      kind: 'cta',
+      heading: 'Let Solunar recommend the right BESS architecture.',
+      text: 'Share your project parameters and Solunar will help select and integrate the most suitable battery, PCS and EMS configuration.',
+      actions: [
+        { label: 'Recommend the Right BESS Architecture', href: '/contact' },
+        { label: 'Understand PCS & EMS', href: '/pcs-ems-system-integration' },
+      ],
+    },
+  ],
+};
+
+export const pcsEms: PageContent = {
+  slug: '/pcs-ems-system-integration',
+  seoTitle: 'PCS & EMS Integration Malaysia | BESS System Architecture',
+  metaDescription:
+    'A BESS is more than a battery. Solunar coordinates PCS, EMS, BMS, transformers, protection and monitoring into one integrated storage system.',
+  navLabel: 'PCS, EMS & Architecture',
+  eyebrow: 'Technology · Integration',
+  h1: 'BESS Integration Is More Than Buying a Battery',
+  lead: 'A complete BESS project requires proper integration of hardware, software and electrical infrastructure — the battery is just one component, and Solunar Energy coordinates the whole system.',
+  heroActions: [{ label: 'Request System Architecture Support', href: '/contact' }],
+  primaryKeyword: 'PCS EMS integration Malaysia',
+  schema: { type: 'Service', serviceType: 'PCS and EMS system integration' },
+  blocks: [
+    {
+      kind: 'list',
+      variant: 'inline',
+      heading: 'Core components of a BESS',
+      lead: 'A complete energy storage system brings together hardware, software and electrical infrastructure:',
+      items: [
+        'Battery cells, racks and containers',
+        'BMS (Battery Management System)',
+        'PCS (Power Conversion System)',
+        'EMS (Energy Management System)',
+        'Transformer',
+        'Switchgear',
+        'Protection',
+        'Cooling',
+        'Fire detection and suppression',
+        'Monitoring',
+        'Optional SCADA',
+        'Grid connection',
+        'Site load interface',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'What is a PCS in a BESS?',
+      paragraphs: [
+        'The Power Conversion System (PCS) converts energy between DC battery power and AC grid/load power and controls power flow. The wrong PCS choice affects efficiency, response time, reliability and project economics.',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'What is an EMS in a BESS?',
+      paragraphs: [
+        'The Energy Management System (EMS) controls strategy — deciding when to charge, discharge, shave peak demand, preserve battery life and optimise savings. It is the brain of the storage system.',
+      ],
+    },
+    {
+      kind: 'prose',
+      heading: 'Why does integration matter?',
+      paragraphs: [
+        'Even good equipment performs badly if poorly integrated. Solunar helps partners make components work together as one coordinated system, so the battery, PCS, EMS, protection and monitoring operate and perform as one.',
+      ],
+    },
+    {
+      kind: 'cta',
+      heading: 'Need help making every component work as one system?',
+      text: 'Solunar coordinates PCS, EMS, BMS, transformers, protection and monitoring into one integrated, well-behaved BESS.',
+      actions: [
+        { label: 'Request System Architecture Support', href: '/contact' },
+        { label: 'See O&M for ESS Projects', href: '/bess-om-malaysia' },
+      ],
+    },
+  ],
+};
