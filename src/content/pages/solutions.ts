@@ -63,6 +63,65 @@ export const commercialIndustrial: PageContent = {
       ],
     },
     {
+      kind: 'cards',
+      heading: 'The challenges C&I sites face',
+      lead: 'Commercial and industrial sites in Malaysia share a common set of energy pressures:',
+      columns: 2,
+      items: [
+        {
+          icon: 'gauge',
+          title: 'High maximum-demand charges',
+          text: 'A single monthly demand spike can inflate the bill for the whole period, even when average consumption is modest.',
+        },
+        {
+          icon: 'expansion',
+          title: 'Power & expansion constraints',
+          text: 'New machinery, cold rooms or EV charging can exceed the existing supply — and grid upgrades are slow and costly.',
+        },
+        {
+          icon: 'battery',
+          title: 'Rising energy cost & ESG pressure',
+          text: 'Tariffs trend upward while customers, investors and group HQs push for measurable carbon reduction.',
+        },
+        {
+          icon: 'safety',
+          title: 'Outage & resilience risk',
+          text: 'Unplanned outages disrupt production, cold chain and uptime — with direct cost and reputational impact.',
+        },
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How Solunar delivers your C&I BESS',
+      lead: 'Solunar takes a C&I storage project from first enquiry to long-term operation:',
+      items: [
+        { title: 'Load & tariff review', text: 'We analyse your load profile, maximum demand and tariff to find where storage pays back.' },
+        { title: 'System sizing & design', text: 'We size the battery, PCS and EMS to your peaks, available space and budget.' },
+        { title: 'Integration & commissioning', text: 'We coordinate battery, PCS, EMS, protection and metering, then commission to specification.' },
+        { title: 'Monitoring & O&M', text: 'We support remote monitoring, maintenance and long-term battery-health management.' },
+      ],
+    },
+    {
+      kind: 'faq',
+      items: [
+        {
+          question: 'How quickly can a C&I BESS pay back?',
+          answer:
+            'Payback depends on your maximum-demand charges, tariff, load profile, system size and operating strategy. Solunar models this per site rather than promising a fixed figure.',
+        },
+        {
+          question: 'Can BESS work with our existing solar?',
+          answer:
+            'Yes. BESS pairs with existing or new rooftop solar to store excess generation, lift self-consumption and shave demand — coordinated through the EMS.',
+        },
+        {
+          question: 'Do we need to upgrade our grid connection first?',
+          answer:
+            'Often not immediately. A BESS can supply additional peak power on demand, supporting expansion while any longer-term grid upgrade is planned.',
+        },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Have a C&I site that could benefit from storage?',
       text: 'Solunar can assess peak shaving, self-consumption and resilience options for your commercial or industrial site.',

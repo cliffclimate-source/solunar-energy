@@ -138,6 +138,26 @@ export const whatWeDo: PageContent = {
       ],
     },
     {
+      kind: 'prose',
+      heading: 'Why integration — not just supply — is the real value',
+      paragraphs: [
+        'Buying a battery is the easy part. The value of a BESS comes from how the battery, PCS, EMS, protection, metering and site load are integrated so the system dispatches safely and performs as one.',
+        'Solunar sits in that integration layer — selecting suitable technology, coordinating the system architecture and supporting it through commissioning and O&M — so EPCCs, developers and asset owners can deliver bankable storage without building deep in-house battery capability.',
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How we engage',
+      lead: 'A typical Solunar engagement moves through five stages:',
+      items: [
+        { title: 'Discovery', text: 'We review the project, load profile, site and commercial goals.' },
+        { title: 'Proposal & sizing', text: 'We recommend the battery, PCS and EMS configuration with a technical proposal.' },
+        { title: 'Design & integration', text: 'We coordinate the full system architecture and documentation.' },
+        { title: 'Commissioning', text: 'We support installation, testing and commissioning to specification.' },
+        { title: 'O&M & after-sales', text: 'We plan long-term monitoring, maintenance and warranty support.' },
+      ],
+    },
+    {
       kind: 'cta',
       heading: 'Want the full picture of how Solunar supports your projects?',
       text: 'Request the Solunar capability deck and a tailored conversation about your Solar + BESS pipeline.',
