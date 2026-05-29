@@ -445,6 +445,19 @@ export const articles: Article[] = [
   },
 ];
 
+/** Topical hero image per article (reuses the relevant AI render). */
+export const articleImages: Record<string, string> = {
+  'what-is-bess': '/images/home-bess-containers.png',
+  'what-is-a-pcs': '/images/pcs-ems.png',
+  'what-is-an-ems': '/images/home-controlroom.png',
+  'why-battery-chemistry-matters': '/images/eve-bess.png',
+  'how-battery-storage-reduces-maximum-demand': '/images/peak-shaving.png',
+  'why-bess-om-differs-from-solar-om': '/images/bess-om.png',
+  'why-epcc-companies-partner-with-a-bess-integrator': '/images/bess-partner-epcc.png',
+  'how-byd-goodwe-and-ems-come-together': '/images/multi-brand-integration.png',
+  'how-to-choose-between-bess-solutions': '/images/products-hero.png',
+};
+
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
 }
@@ -488,6 +501,9 @@ export function articleToPageContent(article: Article): PageContent {
     h1: article.title,
     lead: article.definition,
     primaryKeyword: article.slug.replace(/-/g, ' '),
+    image: articleImages[article.slug]
+      ? { src: articleImages[article.slug], alt: article.title, aspect: '4 / 3' }
+      : undefined,
     schema: { type: 'WebPage' },
     blocks,
   };
