@@ -99,8 +99,8 @@ export default function Page() {
                       ))}
                     </div>
                     <div className="mt-auto pt-6">
-                      <Button href="/contact" variant="outline" withArrow className="w-full">
-                        Discuss this product
+                      <Button href={`/products/${p.id}`} variant="outline" withArrow className="w-full">
+                        View details
                       </Button>
                     </div>
                   </div>

@@ -17,6 +17,7 @@ export type Product = {
   image: string;
   tagline: string;
   description: string;
+  overview?: string[];
   specs: { label: string; value: string }[];
   applications: string[];
 };
@@ -30,6 +31,11 @@ export const products: Product[] = [
     tagline: 'Outdoor all-in-one commercial & industrial battery storage cabinet.',
     description:
       'A plug-and-play outdoor C&I storage cabinet with cobalt-free LFP chemistry and an integrated fire-suppression system, suited to factories and commercial sites.',
+    overview: [
+      'The Solunar C&I Cabinet 241 is an outdoor, all-in-one battery energy storage cabinet for commercial and industrial sites. It packages 241 kWh of cobalt-free LFP storage with power conversion, thermal management and a Novec 1230 plus water fire-suppression system inside one weatherproof enclosure.',
+      'Built for plug-and-play deployment, it suits factories, warehouses, cold storage and commercial buildings that need maximum-demand peak shaving, solar self-consumption, backup power or extra capacity — without major civil works.',
+      'Solunar supplies and integrates the cabinet under the Solunar brand, coordinating the PCS, EMS, protection and metering, and supporting commissioning and long-term O&M. Final configuration is subject to project design, brand approval and site requirements.',
+    ],
     specs: [
       { label: 'Usable energy', value: '241 kWh (BOL)' },
       { label: 'Rated power', value: '60 / 120 kW' },
@@ -128,3 +134,7 @@ export const productsSoftware: { name: string; icon: string; description: string
 
 export const productsNote =
   'Specifications are indicative and subject to final product configuration, brand approval, commercial terms and project requirements. Solunar supplies and integrates selected battery storage technologies under the Solunar brand.';
+
+export function getProduct(id: string): Product | undefined {
+  return products.find((p) => p.id === id);
+}

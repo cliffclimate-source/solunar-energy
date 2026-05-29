@@ -14,6 +14,7 @@ import { peakShaving } from '@/content/pages/peak-shaving';
 import { industriesMeta } from '@/content/pages/industries';
 import { knowledgeMeta, articles } from '@/content/pages/knowledge';
 import { contactMeta } from '@/content/pages/contact';
+import { products } from '@/content/pages/products';
 
 /** Every page rendered through the shared StandardPage layout. */
 export const standardPages: PageContent[] = [
@@ -41,6 +42,7 @@ export const allPaths: string[] = [
   '/',
   ...standardPages.map((p) => p.slug),
   '/products',
+  ...products.map((p) => `/products/${p.id}`),
   '/byd-utility-bess',
   industriesMeta.slug,
   knowledgeMeta.slug,
