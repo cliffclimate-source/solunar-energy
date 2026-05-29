@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/metadata';
 import { StandardPage } from '@/components/layout/StandardPage';
-import { peakShaving } from '@/content/pages/solutions';
+import { peakShaving } from '@/content/pages/peak-shaving';
 
 export const metadata: Metadata = buildMetadata({
   title: peakShaving.seoTitle,

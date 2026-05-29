@@ -6,11 +6,11 @@ import {
   utilityScale,
   bessOm,
   bessSafety,
-  peakShaving,
-  powerExpansion,
   solarBessDevelopers,
   localAssembly,
 } from '@/content/pages/solutions';
+import { powerExpansion } from '@/content/pages/power-expansion';
+import { peakShaving } from '@/content/pages/peak-shaving';
 import { industriesMeta } from '@/content/pages/industries';
 import { knowledgeMeta, articles } from '@/content/pages/knowledge';
 import { contactMeta } from '@/content/pages/contact';

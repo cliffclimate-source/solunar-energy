@@ -19,9 +19,13 @@ export function Footer() {
               Southeast Asia.
             </p>
             <ul className="flex flex-col gap-2.5 text-sm text-muted">
-              <li className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                {site.address.locality}, Malaysia
+              <li className="flex items-start gap-2.5">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
+                <span>
+                  {site.address.streetAddress},
+                  <br />
+                  {site.address.postalCode} {site.address.locality}, Malaysia
+                </span>
               </li>
               <li>
                 <a
@@ -67,7 +71,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {site.legalName}. All rights reserved.
+            © {year} {site.legalName} ({site.companyNo}). All rights reserved.
           </p>
           <p>Solunar supports EPCC companies — we don&rsquo;t replace them.</p>
         </div>

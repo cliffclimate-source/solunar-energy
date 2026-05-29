@@ -65,9 +65,12 @@ export default function Page() {
                       {site.contact.phoneDisplay}
                     </a>
                   </li>
-                  <li className="flex items-center gap-3 text-muted">
-                    <MapPin className="h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
-                    {site.address.locality}, Malaysia
+                  <li className="flex items-start gap-3 text-muted">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
+                    <span>
+                      {site.address.streetAddress}, {site.address.postalCode}{' '}
+                      {site.address.locality}, Malaysia
+                    </span>
                   </li>
                 </ul>
               </div>

@@ -21,13 +21,13 @@ export const site = {
     phoneHref: 'tel:+60300000000',
   },
   address: {
-    // TODO: replace with the registered company address.
-    streetAddress: 'Registered office — Kuala Lumpur',
+    streetAddress: 'Unit 304A, C3-09 Damansara, No. 99 Jalan Damansara',
     locality: 'Kuala Lumpur',
     region: 'Wilayah Persekutuan Kuala Lumpur',
-    postalCode: '50000',
+    postalCode: '60000',
     country: 'MY',
   },
+  companyNo: '1575507-K',
   areaServed: ['Malaysia', 'Southeast Asia'],
   social: {
     // TODO: add real social profile URLs.
