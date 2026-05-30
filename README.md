@@ -103,3 +103,5 @@ Solunar never claims to provide full EPCC services, construct projects, be the m
 > Note: an earlier static HTML prototype lives in the sibling `../solunar/` folder. It is superseded by this Next.js build and left untouched.
 
 © Solunar Energy Sdn Bhd
+
+<!-- deploy trigger -->
