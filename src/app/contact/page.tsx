@@ -4,12 +4,18 @@ import { buildMetadata } from '@/lib/metadata';
 import { PageHero } from '@/components/layout/PageHero';
 import { Container, Section } from '@/components/ui/primitives';
 import { ContactForm } from '@/components/forms/ContactForm';
-import { site } from '@/lib/site';
+import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
+import { getSiteSettings } from '@/sanity/lib/settings';
 import type { PageContent } from '@/content/types';
 import { contactMeta, contactReasons } from '@/content/pages/contact';
 
 const contactPage: PageContent = {
   ...contactMeta,
+  image: {
+    src: '/images/contact-hero.png',
+    alt: 'A Solunar energy consultant discussing a Solar + BESS project with a client in Kuala Lumpur',
+    aspect: '4 / 3',
+  },
   blocks: [],
   schema: { type: 'ContactPage' },
 };
@@ -20,7 +26,8 @@ export const metadata: Metadata = buildMetadata({
   path: contactMeta.slug,
 });
 
-export default function Page() {
+export default async function Page() {
+  const s = await getSiteSettings();
   return (
     <>
       <PageHero content={contactPage} />
@@ -49,27 +56,38 @@ export default function Page() {
                 <ul className="mt-4 flex flex-col gap-3 text-[0.95rem] text-ink">
                   <li>
                     <a
-                      href={`mailto:${site.contact.email}`}
+                      href={`mailto:${s.email}`}
                       className="flex items-center gap-3 transition-colors hover:text-accent-2"
                     >
                       <Mail className="h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
-                      {site.contact.email}
+                      {s.email}
                     </a>
                   </li>
                   <li>
                     <a
-                      href={site.contact.phoneHref}
+                      href={s.phoneHref}
                       className="flex items-center gap-3 transition-colors hover:text-accent-2"
                     >
                       <Phone className="h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
-                      {site.contact.phoneDisplay}
+                      {s.phoneDisplay}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={s.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 transition-colors hover:text-[#25D366]"
+                    >
+                      <WhatsAppIcon className="h-4 w-4 shrink-0 text-[#25D366]" />
+                      WhatsApp {s.phoneDisplay}
                     </a>
                   </li>
                   <li className="flex items-start gap-3 text-muted">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-2" aria-hidden="true" />
                     <span>
-                      {site.address.streetAddress}, {site.address.postalCode}{' '}
-                      {site.address.locality}, Malaysia
+                      {s.address.streetAddress}, {s.address.postalCode}{' '}
+                      {s.address.locality}, Malaysia
                     </span>
                   </li>
                 </ul>

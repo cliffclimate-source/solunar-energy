@@ -30,15 +30,31 @@ Visit **http://localhost:3000/studio**, log in with your Sanity account, and you
 document types: **Site Settings**, **Page**, **Product** and **Knowledge Article** — each with
 text fields and image uploads.
 
+## Pre-fill Site Settings (optional, one command)
+
+After step 2, create an API token (Sanity → **Manage → API → Tokens**, with **Editor**
+permission), then run:
+
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id \
+NEXT_PUBLIC_SANITY_DATASET=production \
+SANITY_WRITE_TOKEN=sk_xxx \
+npm run seed:sanity
+```
+
+This creates the **Site Settings** document with Solunar's current details. Edit it anytime
+in `/studio`.
+
 ## What works now vs. next
 
-- ✅ The Studio shell + content **schemas** are installed and build cleanly. The site header/footer
+- ✅ The Studio shell + content **schemas** are installed and build cleanly. The header/footer
   are hidden on `/studio`.
-- ⏭️ **Content migration is the next phase.** Today the live pages render from typed content in
-  `src/content/`. To make edits in the Studio update the live site, the content is migrated into
-  Sanity and the pages are switched to read from it (with a safe fallback to the in‑code content).
-  This is done incrementally — starting with **Site Settings** (contact, address) and the
-  **Products / Knowledge** collections — so the site never breaks during the transition.
+- ✅ **Site Settings is live-wired.** Once a project id is set, the footer and contact page read
+  brand/contact details (phone, email, enquiry inbox, address, company no., LinkedIn) from Sanity —
+  with a safe fallback to the in-code values in `src/lib/site.ts` if Sanity is empty or unreachable.
+- ✅ **Products** and **Knowledge articles** have CMS schemas ready to populate.
+- ⏭️ The rich marketing pages (home, solutions, technology) keep their premium typed layout
+  (cards, steps, comparison tables, FAQ, image bands) in `src/content/` for design quality.
 
 > Until a real `NEXT_PUBLIC_SANITY_PROJECT_ID` is set, the Studio runs against a placeholder and
-> the public site simply uses the in‑code content — so nothing breaks.
+> the public site runs entirely on the in-code content — zero network calls, nothing breaks.

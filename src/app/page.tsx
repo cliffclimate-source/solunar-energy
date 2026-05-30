@@ -6,7 +6,6 @@ import { buildMetadata } from '@/lib/metadata';
 import { Container, Eyebrow, Section } from '@/components/ui/primitives';
 import { Reveal } from '@/components/ui/Reveal';
 import { Button } from '@/components/ui/Button';
-import { ServiceCard } from '@/components/ui/Card';
 import { ComparisonTable } from '@/components/ui/ComparisonTable';
 import { CTABand } from '@/components/ui/CTABand';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -14,7 +13,6 @@ import { Figure } from '@/components/ui/Figure';
 import { getIcon } from '@/components/ui/icons';
 import { Hero } from '@/components/home/Hero';
 import { BrandStrip } from '@/components/home/BrandStrip';
-import { KLSkyline } from '@/components/visuals/Skyline';
 import { GridGlow } from '@/components/visuals/Decor';
 import {
   homeFaqs,
@@ -88,13 +86,48 @@ export default function HomePage() {
             </div>
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {homeServices.cards.map((card, i) => (
-              <Reveal key={card.href} delay={i * 60} className="h-full">
-                <ServiceCard icon={card.icon} title={card.title} href={card.href} index={i + 1}>
-                  {card.text}
-                </ServiceCard>
-              </Reveal>
-            ))}
+            {homeServices.cards.map((card, i) => {
+              const Icon = getIcon(card.icon);
+              return (
+                <Reveal key={card.href} delay={(i % 3) * 60} className="h-full">
+                  <Link
+                    href={card.href}
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/15 hover:shadow-card"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden bg-mist">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                      <span className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-paper/90 text-ink ring-1 ring-line backdrop-blur">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                      </span>
+                      <span className="absolute right-3 top-3 rounded-full bg-ink/55 px-2 py-0.5 font-mono text-[0.62rem] text-paper/90 backdrop-blur">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2.5 flex-1 text-[0.95rem] leading-relaxed text-muted">
+                        {card.text}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink">
+                        Learn more
+                        <ArrowRight
+                          className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
           <Reveal className="mt-14">
             <div className="border-t border-line pt-10">
@@ -113,10 +146,18 @@ export default function HomePage() {
       <Section tone="paper">
         <Container>
           <Reveal>
-            <div className="max-w-2xl">
-              <Eyebrow>{homeSolarVsBess.eyebrow}</Eyebrow>
-              <h2 className={`mt-4 text-ink ${h2}`}>{homeSolarVsBess.heading}</h2>
-              <p className="mt-4 prose-body">{homeSolarVsBess.lead}</p>
+            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+              <div className="max-w-2xl">
+                <Eyebrow>{homeSolarVsBess.eyebrow}</Eyebrow>
+                <h2 className={`mt-4 text-ink ${h2}`}>{homeSolarVsBess.heading}</h2>
+                <p className="mt-4 prose-body">{homeSolarVsBess.lead}</p>
+              </div>
+              <Figure
+                src="/images/home-solar-vs-bess.png"
+                alt="Solar PV array on the left and a row of battery energy storage containers on the right"
+                aspect="4 / 3"
+                tone="light"
+              />
             </div>
             <div className="mt-10">
               <ComparisonTable
@@ -156,17 +197,12 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={80}>
-              <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-paper to-mist">
-                <div
-                  className="absolute right-10 top-9 h-14 w-14 rounded-full bg-accent/25 blur-xl"
-                  aria-hidden="true"
-                />
-                <div
-                  className="absolute right-12 top-11 h-10 w-10 rounded-full bg-accent"
-                  aria-hidden="true"
-                />
-                <KLSkyline className="relative mt-24 px-6 text-ink/85" />
-              </div>
+              <Figure
+                src="/images/home-malaysia.png"
+                alt="Kuala Lumpur city skyline at golden hour with rooftop solar on commercial buildings"
+                aspect="4 / 3"
+                tone="light"
+              />
             </Reveal>
           </div>
         </Container>
@@ -184,9 +220,10 @@ export default function HomePage() {
           </Reveal>
           <Reveal className="mt-12">
             <Figure
+              src="/images/home-technology-integration.png"
               tone="dark"
               aspect="16 / 7"
-              alt="Battery energy storage containers integrated with PCS and EMS at a site in Malaysia"
+              alt="Battery cabinets integrated with PCS skids and an EMS control screen in a BESS facility"
               caption="Battery, PCS and EMS integrated and monitored as one system."
               sizes="(min-width: 1024px) 80vw, 100vw"
             />

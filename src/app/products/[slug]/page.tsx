@@ -6,7 +6,6 @@ import { Container, Eyebrow, Section } from '@/components/ui/primitives';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTABand } from '@/components/ui/CTABand';
-import { BrandMark } from '@/components/ui/Wordmark';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { productLd } from '@/lib/schema';
 import { products, getProduct } from '@/content/pages/products';
@@ -74,12 +73,6 @@ export default async function Page({ params }: Params) {
                 sizes="(min-width: 1024px) 44vw, 100vw"
                 className="object-cover"
               />
-              <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-paper/90 px-3.5 py-2 shadow-sm ring-1 ring-line backdrop-blur">
-                <BrandMark className="h-4 w-auto" />
-                <span className="font-logo text-sm font-bold uppercase tracking-wide text-ink">
-                  Solunar
-                </span>
-              </span>
             </div>
           </div>
         </Container>

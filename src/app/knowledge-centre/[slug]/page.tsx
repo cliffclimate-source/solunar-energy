@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { buildMetadata } from '@/lib/metadata';
 import { StandardPage } from '@/components/layout/StandardPage';
-import { articles, getArticle, articleToPageContent } from '@/content/pages/knowledge';
+import { articles, getArticle, articleToPageContent, articleDates } from '@/content/pages/knowledge';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: article.metaDescription,
     path: `/knowledge-centre/${article.slug}`,
     type: 'article',
+    publishedTime: articleDates[article.slug],
   });
 }
 

@@ -1,7 +1,7 @@
 import { PageHero } from '@/components/layout/PageHero';
 import { Blocks } from '@/components/blocks/Blocks';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { serviceLd } from '@/lib/schema';
+import { serviceLd, articleLd } from '@/lib/schema';
 import type { PageContent } from '@/content/types';
 
 /**
@@ -21,6 +21,17 @@ export function StandardPage({ content }: { content: PageContent }) {
             description: content.metaDescription,
             path: content.slug,
             brands: content.schema.brands,
+          })}
+        />
+      )}
+      {content.datePublished && (
+        <JsonLd
+          data={articleLd({
+            title: content.h1,
+            description: content.metaDescription,
+            path: content.slug,
+            datePublished: content.datePublished,
+            image: content.image?.src,
           })}
         />
       )}

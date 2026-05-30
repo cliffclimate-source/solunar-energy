@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { site, footerNav } from '@/lib/site';
+import { footerNav } from '@/lib/site';
+import { getSiteSettings } from '@/sanity/lib/settings';
 import { Container } from '@/components/ui/primitives';
 import { Wordmark } from '@/components/ui/Wordmark';
 
-export function Footer() {
+export async function Footer() {
   const year = new Date().getFullYear();
+  const s = await getSiteSettings();
 
   return (
     <footer className="border-t border-line bg-mist text-ink">
@@ -22,27 +24,27 @@ export function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
                 <span>
-                  {site.address.streetAddress},
+                  {s.address.streetAddress},
                   <br />
-                  {site.address.postalCode} {site.address.locality}, Malaysia
+                  {s.address.postalCode} {s.address.locality}, Malaysia
                 </span>
               </li>
               <li>
                 <a
-                  href={`mailto:${site.contact.email}`}
+                  href={`mailto:${s.email}`}
                   className="flex items-center gap-2.5 transition-colors hover:text-ink"
                 >
                   <Mail className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                  {site.contact.email}
+                  {s.email}
                 </a>
               </li>
               <li>
                 <a
-                  href={site.contact.phoneHref}
+                  href={s.phoneHref}
                   className="flex items-center gap-2.5 transition-colors hover:text-ink"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                  {site.contact.phoneDisplay}
+                  {s.phoneDisplay}
                 </a>
               </li>
             </ul>
@@ -71,7 +73,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {site.legalName} ({site.companyNo}). All rights reserved.
+            © {year} {s.legalName} ({s.companyNo}). All rights reserved.
           </p>
           <p>Solunar supports EPCC companies — we don&rsquo;t replace them.</p>
         </div>

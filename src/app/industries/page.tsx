@@ -55,6 +55,34 @@ export default function Page() {
           </div>
         </Container>
       </Section>
+      <Section tone="mist">
+        <Container>
+          <Reveal>
+            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-paper">
+                <Image
+                  src="/images/industries-band.png"
+                  alt="High-load Malaysian industrial and commercial facilities with rooftop solar and battery storage"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="font-display text-display-sm font-semibold tracking-tight text-ink">
+                  One storage partner across every high-load sector
+                </h2>
+                <p className="mt-4 prose-body">
+                  From factories and cold storage to data centres, malls and EV charging hubs,
+                  Solunar designs Solar + BESS around each sector&apos;s load profile, peak-demand
+                  pattern and resilience needs — then integrates, monitors and maintains it for the
+                  long term.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
       <CTABand
         heading="High energy costs or peak demand pressure? Solunar can help."
         text="Solunar supports Solar + BESS across Malaysia's most energy-intensive sectors — tell us about your site and load profile."

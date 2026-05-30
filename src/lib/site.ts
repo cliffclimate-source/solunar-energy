@@ -11,14 +11,16 @@ export const site = {
   tagline: 'The Solar + BESS technology partner behind EPCC companies.',
   description:
     'Solunar Energy is a Solar + BESS distributor and system integrator in Malaysia, supporting EPCCs, developers and asset owners with battery storage, PCS, EMS and O&M.',
-  // TODO: replace with the production domain before launch.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.solunar.com.my',
+  // Production domain. Override per-environment with NEXT_PUBLIC_SITE_URL.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://solunar.my',
   locale: 'en_MY',
   contact: {
-    // TODO: replace with real business contact details.
     email: 'sales@solunar.my',
-    phoneDisplay: '+60 3-0000 0000',
-    phoneHref: 'tel:+60300000000',
+    phoneDisplay: '+60 16-668 9348',
+    phoneHref: 'tel:+60166689348',
+    whatsapp: '60166689348',
+    whatsappHref:
+      'https://wa.me/60166689348?text=Hi%20Solunar%2C%20I%27d%20like%20to%20discuss%20a%20Solar%20%2B%20BESS%20project.',
   },
   address: {
     streetAddress: 'Unit 304A, C3-09 Damansara, No. 99 Jalan Damansara',

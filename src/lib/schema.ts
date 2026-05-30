@@ -52,6 +52,32 @@ export function localBusinessLd(): Json {
   };
 }
 
+export function articleLd(opts: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+}): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: opts.title,
+    description: opts.description,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    ...(opts.image ? { image: `${site.url}${opts.image}` } : {}),
+    author: { '@type': 'Organization', name: site.legalName },
+    publisher: {
+      '@type': 'Organization',
+      name: site.legalName,
+      logo: { '@type': 'ImageObject', url: `${site.url}/favicon.svg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${site.url}${opts.path}` },
+  };
+}
+
 export function serviceLd(opts: {
   name: string;
   serviceType: string;

@@ -18,6 +18,7 @@ export function buildMetadata(opts: {
   description: string;
   path: string;
   type?: 'website' | 'article';
+  publishedTime?: string;
 }): Metadata {
   const canonical = opts.path === '/' ? '/' : opts.path;
   const url = opts.path === '/' ? site.url : `${site.url}${opts.path}`;
@@ -32,6 +33,7 @@ export function buildMetadata(opts: {
       siteName: site.legalName,
       locale: site.locale,
       type: opts.type ?? 'website',
+      ...(opts.publishedTime ? { publishedTime: opts.publishedTime } : {}),
       images: [OG_IMAGE],
     },
     twitter: {

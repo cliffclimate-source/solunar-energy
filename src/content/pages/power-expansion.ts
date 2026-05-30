@@ -99,6 +99,13 @@ export const powerExpansion: PageContent = {
       ],
     },
     {
+      kind: 'image',
+      src: '/images/powerexpansion-detail.png',
+      alt: 'Industrial electrical yard with transformer, switchgear and a battery storage container supporting a factory expansion',
+      aspect: '16 / 9',
+      caption: 'A BESS adds usable peak power on demand — expand now while longer-term grid upgrades are planned.',
+    },
+    {
       kind: 'list',
       variant: 'cards',
       columns: 3,

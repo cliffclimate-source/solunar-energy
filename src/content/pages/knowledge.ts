@@ -1,4 +1,13 @@
-import type { Block, FaqItem, PageContent } from '@/content/types';
+import type { Block, PageContent } from '@/content/types';
+import type { Article } from './knowledge-types';
+import { basicsArticles } from './knowledge-basics';
+import { ciArticles } from './knowledge-ci';
+import { solarArticles } from './knowledge-solar';
+import { utilityArticles } from './knowledge-utility';
+import { omArticles } from './knowledge-om';
+import { incentivesArticles } from './knowledge-incentives';
+
+export type { Article } from './knowledge-types';
 
 export const knowledgeMeta = {
   slug: '/knowledge-centre',
@@ -12,21 +21,8 @@ export const knowledgeMeta = {
   primaryKeyword: 'what is BESS',
 };
 
-export type Article = {
-  slug: string;
-  title: string;
-  seoTitle: string;
-  metaDescription: string;
-  category: 'Fundamentals' | 'Technology' | 'Commercial' | 'Operations';
-  excerpt: string;
-  definition: string;
-  sections: { heading: string; paragraphs: string[] }[];
-  keyPoints?: { lead: string; items: string[] };
-  faq?: FaqItem[];
-  related?: { label: string; href: string }[];
-};
-
-export const articles: Article[] = [
+/** The original, hand-authored explainer articles. */
+const coreArticles: Article[] = [
   {
     slug: 'what-is-bess',
     title: 'What Is a BESS (Battery Energy Storage System)?',
@@ -445,8 +441,46 @@ export const articles: Article[] = [
   },
 ];
 
-/** Topical hero image per article (reuses the relevant AI render). */
-export const articleImages: Record<string, string> = {
+/** All knowledge-centre articles: original explainers + topical clusters. */
+export const articles: Article[] = [
+  ...coreArticles,
+  ...basicsArticles,
+  ...ciArticles,
+  ...solarArticles,
+  ...utilityArticles,
+  ...omArticles,
+  ...incentivesArticles,
+];
+
+/**
+ * Publish dates: a steady cadence of four articles per month, newest first.
+ * Index 0 is the most recent (26 May 2026) and dates step back ~one month every
+ * four articles, giving roughly a year of regular publishing history. Hardcoded
+ * (not derived from the current date) so the build output is deterministic.
+ */
+const PUBLISH_DAYS = [26, 19, 12, 5];
+const BASE_YEAR = 2026;
+const BASE_MONTH = 5; // May 2026 (1-based)
+
+function computeArticleDate(index: number): string {
+  const monthOffset = Math.floor(index / PUBLISH_DAYS.length);
+  const day = PUBLISH_DAYS[index % PUBLISH_DAYS.length];
+  let month = BASE_MONTH - monthOffset;
+  let year = BASE_YEAR;
+  while (month <= 0) {
+    month += 12;
+    year -= 1;
+  }
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+/** ISO publish date per article slug (array order = newest first). */
+export const articleDates: Record<string, string> = Object.fromEntries(
+  articles.map((a, i) => [a.slug, computeArticleDate(i)]),
+);
+
+/** Hero image per article. New articles fall back by category (see below). */
+const explicitArticleImages: Record<string, string> = {
   'what-is-bess': '/images/home-bess-containers.png',
   'what-is-a-pcs': '/images/pcs-ems.png',
   'what-is-an-ems': '/images/home-controlroom.png',
@@ -456,7 +490,97 @@ export const articleImages: Record<string, string> = {
   'why-epcc-companies-partner-with-a-bess-integrator': '/images/bess-partner-epcc.png',
   'how-byd-goodwe-and-ems-come-together': '/images/multi-brand-integration.png',
   'how-to-choose-between-bess-solutions': '/images/products-hero.png',
+  // BESS Basics
+  'what-is-bess-malaysia': '/images/home-bess-containers.png',
+  'how-battery-energy-storage-systems-work': '/images/home-technology-integration.png',
+  'bess-vs-solar-businesses-need-both': '/images/home-solar-vs-bess.png',
+  'what-is-energy-storage-system': '/images/multi-brand-integration.png',
+  'bess-vs-ess-vs-battery-storage': '/images/multibrand-detail.png',
+  'key-components-of-bess': '/images/pcs-ems.png',
+  // Commercial & Industrial
+  'commercial-industrial-bess-guide': '/images/commercial-industrial-bess.png',
+  'how-bess-reduces-maximum-demand-charges': '/images/peak-shaving.png',
+  'maximum-demand-peak-shaving-business-savings': '/images/peakshaving-detail.png',
+  'bess-for-factories-malaysia': '/images/industry-manufacturing.png',
+  'bess-for-shopping-malls-commercial-buildings': '/images/industry-mall.png',
+  'bess-for-cold-storage-data-centres-high-load-facilities': '/images/industry-cold-storage.png',
+  // Solar + BESS
+  'solar-bess-malaysia-business-opportunity': '/images/home-solar-vs-bess.png',
+  'how-solar-and-battery-storage-work-together': '/images/solar-bess-developers.png',
+  'why-solar-alone-not-enough-for-factories': '/images/ci-detail.png',
+  'solar-bess-roi-payback-calculation': '/images/home-controlroom.png',
+  'power-expansion-with-bess-without-grid-upgrade': '/images/power-expansion.png',
+  'how-bess-helps-businesses-use-more-solar-energy': '/images/commercial-industrial-bess.png',
+  // Utility-Scale
+  'utility-scale-bess-malaysia-opportunities': '/images/utility-scale-ess.png',
+  'bess-for-large-scale-solar-projects': '/images/developers-detail.png',
+  'bess-for-lss5-future-solar-farms': '/images/byd-utility-hero.png',
+  'bess-for-cress-third-party-access': '/images/byd-utility-containers.png',
+  'how-bess-improves-grid-stability': '/images/byd-grid-substation.png',
+  'why-infrastructure-funds-energy-storage': '/images/utility-detail.png',
+  // O&M, Safety & Bankability
+  'bess-safety-developers-banks-epccs': '/images/bess-safety.png',
+  'bess-fire-safety-thermal-management': '/images/safety-detail.png',
+  'bess-warranty-degradation-lifecycle-cost': '/images/eve-detail.png',
+  'om-for-battery-energy-storage-systems': '/images/bess-om.png',
+  'cloud-om-utility-scale-ess': '/images/pcs-ems-detail.png',
+  'how-remote-monitoring-improves-bess-performance': '/images/home-controlroom.png',
+  // Incentives & Business Case
+  'malaysia-bess-tax-incentive-2026': '/images/home-malaysia.png',
+  'solar-bess-tax-incentives-ci': '/images/commercial-industrial-bess.png',
+  'how-to-calculate-bess-savings-maximum-demand': '/images/peakshaving-detail.png',
+  'bess-investment-case-banks-epccs-funds': '/images/developers-detail.png',
 };
+
+/** Fallback hero image by category for any article without an explicit map. */
+const categoryImage: Record<string, string> = {
+  Fundamentals: '/images/home-bess-containers.png',
+  Technology: '/images/multi-brand-integration.png',
+  Commercial: '/images/commercial-industrial-bess.png',
+  Operations: '/images/bess-om.png',
+  'Solar + BESS': '/images/solar-bess-developers.png',
+  'Utility-Scale': '/images/utility-scale-ess.png',
+  Incentives: '/images/home-malaysia.png',
+};
+
+function heroImageFor(article: Article): string {
+  return explicitArticleImages[article.slug] ?? categoryImage[article.category] ?? '/images/home-bess-containers.png';
+}
+
+/** Public hero-image map (used by the listing grid). */
+export const articleImages: Record<string, string> = Object.fromEntries(
+  articles.map((a) => [a.slug, heroImageFor(a)]),
+);
+
+/** A second, in-body image per article (distinct from the hero above). */
+const inlineByCategory: Record<string, string> = {
+  Fundamentals: '/images/home-technology-integration.png',
+  Technology: '/images/pcs-ems-detail.png',
+  Commercial: '/images/ci-detail.png',
+  Operations: '/images/om-detail.png',
+  'Solar + BESS': '/images/developers-detail.png',
+  'Utility-Scale': '/images/utility-detail.png',
+  Incentives: '/images/peakshaving-detail.png',
+};
+
+const explicitInlineImages: Record<string, string> = {
+  'what-is-bess': '/images/home-technology-integration.png',
+  'what-is-a-pcs': '/images/pcs-ems-detail.png',
+  'what-is-an-ems': '/images/pcs-ems-detail.png',
+  'why-battery-chemistry-matters': '/images/eve-detail.png',
+  'how-battery-storage-reduces-maximum-demand': '/images/peakshaving-detail.png',
+  'why-bess-om-differs-from-solar-om': '/images/om-detail.png',
+  'why-epcc-companies-partner-with-a-bess-integrator': '/images/bess-partner-detail.png',
+  'how-byd-goodwe-and-ems-come-together': '/images/multibrand-detail.png',
+  'how-to-choose-between-bess-solutions': '/images/byd-battery-detail.png',
+};
+
+export const articleInlineImages: Record<string, string> = Object.fromEntries(
+  articles.map((a) => [
+    a.slug,
+    explicitInlineImages[a.slug] ?? inlineByCategory[a.category] ?? '/images/home-technology-integration.png',
+  ]),
+);
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
@@ -466,9 +590,31 @@ export function getArticle(slug: string): Article | undefined {
 export function articleToPageContent(article: Article): PageContent {
   const blocks: Block[] = [];
 
-  for (const section of article.sections) {
-    blocks.push({ kind: 'prose', heading: section.heading, paragraphs: section.paragraphs });
-  }
+  article.sections.forEach((section, i) => {
+    if (section.paragraphs && section.paragraphs.length) {
+      blocks.push({ kind: 'prose', heading: section.heading, paragraphs: section.paragraphs });
+    }
+    if (section.bullets && section.bullets.length) {
+      const hasProse = !!(section.paragraphs && section.paragraphs.length);
+      blocks.push({
+        kind: 'list',
+        variant: 'check',
+        columns: 2,
+        items: section.bullets,
+        lead: '',
+        // Show the section heading on the list only when no prose block carried it above.
+        heading: hasProse ? undefined : section.heading,
+      });
+    }
+    if (i === 0 && articleInlineImages[article.slug]) {
+      blocks.push({
+        kind: 'image',
+        src: articleInlineImages[article.slug],
+        alt: article.title,
+        aspect: '16 / 9',
+      });
+    }
+  });
   if (article.keyPoints) {
     blocks.push({
       kind: 'list',
@@ -500,6 +646,7 @@ export function articleToPageContent(article: Article): PageContent {
     eyebrow: `Knowledge · ${article.category}`,
     h1: article.title,
     lead: article.definition,
+    datePublished: articleDates[article.slug],
     primaryKeyword: article.slug.replace(/-/g, ' '),
     image: articleImages[article.slug]
       ? { src: articleImages[article.slug], alt: article.title, aspect: '4 / 3' }

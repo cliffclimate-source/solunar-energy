@@ -2,6 +2,7 @@ import { Container, Eyebrow } from '@/components/ui/primitives';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { Figure } from '@/components/ui/Figure';
+import { formatDate } from '@/lib/date';
 import type { PageContent } from '@/content/types';
 
 /**
@@ -10,6 +11,7 @@ import type { PageContent } from '@/content/types';
  */
 export function PageHero({ content }: { content: PageContent }) {
   const hasImage = Boolean(content.image);
+  const dateLabel = formatDate(content.datePublished);
   return (
     <section className="relative overflow-hidden bg-paper">
       <div
@@ -30,8 +32,21 @@ export function PageHero({ content }: { content: PageContent }) {
                   : [{ name: content.navLabel, path: content.slug }]
               }
             />
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1">
               <Eyebrow>{content.eyebrow}</Eyebrow>
+              {dateLabel && (
+                <>
+                  <span aria-hidden="true" className="text-muted/40">
+                    ·
+                  </span>
+                  <time
+                    dateTime={content.datePublished}
+                    className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-muted"
+                  >
+                    {dateLabel}
+                  </time>
+                </>
+              )}
             </div>
             <h1 className="mt-3 font-display text-display font-semibold tracking-tight text-ink">
               {content.h1}

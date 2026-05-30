@@ -97,5 +97,7 @@ export type PageContent = {
   image?: PageImage;
   blocks: Block[];
   primaryKeyword?: string;
+  /** ISO date (YYYY-MM-DD) — when set, the hero shows the date and an Article JSON-LD is emitted. */
+  datePublished?: string;
   schema: PageSchema;
 };

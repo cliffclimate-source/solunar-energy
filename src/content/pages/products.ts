@@ -117,18 +117,71 @@ export const products: Product[] = [
   },
 ];
 
-export const productsSoftware: { name: string; icon: string; description: string }[] = [
+export const productsSoftware: {
+  name: string;
+  icon: string;
+  description: string;
+  capabilities: string[];
+}[] = [
   {
     name: 'Solunar EMS',
     icon: 'ems',
     description:
-      'Energy management software for real-time monitoring, charge/discharge scheduling and fault diagnostics across the storage system.',
+      'The brain of the BESS. On-site energy management software that controls, monitors and optimises the storage system in real time — connecting the battery, PCS, solar, meter, grid and protection so the system runs to the project objective.',
+    capabilities: [
+      'Real-time monitoring of SoC, SoH, power, temperature and alarms',
+      'Charge/discharge scheduling (rules- and time-based)',
+      'Maximum demand peak shaving against a target threshold',
+      'Solar energy shifting and self-consumption optimisation',
+      'Time-of-use tariff and grid export control',
+      'Fault diagnostics and alarm management',
+      'System protection and safe operating-limit control',
+    ],
   },
   {
     name: 'Solunar Cloud O&M',
     icon: 'om',
     description:
-      'A cloud operations platform for remote monitoring, fault prediction and unattended operation of commercial and utility-scale assets.',
+      'Cloud-based oversight for long-term asset performance. While the EMS controls the system on site, Cloud O&M gives owners and operators remote visibility, diagnostics and reporting from anywhere — supporting unattended operation across one site or a whole portfolio.',
+    capabilities: [
+      'Remote asset monitoring from anywhere',
+      'Fault prediction and early-warning alerts',
+      'Unattended operation with remote oversight',
+      'Multi-site portfolio management',
+      'Battery-health and degradation tracking',
+      'Performance and energy-savings reporting',
+      'Preventive-maintenance planning and downtime reduction',
+    ],
+  },
+];
+
+export const productsSoftwareBenefits: {
+  audience: string;
+  icon: string;
+  lead: string;
+  items: string[];
+}[] = [
+  {
+    audience: 'For EPCCs',
+    icon: 'partner',
+    lead: 'Offer a managed energy-storage solution — not just hardware — and win more bankable projects:',
+    items: [
+      'Improve proposal quality and reduce technical uncertainty',
+      'Offer stronger after-sales and long-term operational support',
+      'Differentiate from competitors selling hardware only',
+      'Build confidence with developers, funds and corporate clients',
+    ],
+  },
+  {
+    audience: 'For asset owners',
+    icon: 'developers',
+    lead: 'Make sure the BESS delivers value every day, across its whole life:',
+    items: [
+      'Improve energy savings and optimise system operation',
+      'Reduce downtime and monitor asset health remotely',
+      'Protect battery lifespan within safe operating limits',
+      'Improve long-term investment confidence',
+    ],
   },
 ];
 

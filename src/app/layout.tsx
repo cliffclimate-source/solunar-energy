@@ -4,6 +4,7 @@ import { site } from '@/lib/site';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { FooterGate } from '@/components/layout/FooterGate';
+import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationLd, localBusinessLd } from '@/lib/schema';
 import './globals.css';
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FooterGate>
           <Footer />
         </FooterGate>
+        <WhatsAppButton />
       </body>
     </html>
   );

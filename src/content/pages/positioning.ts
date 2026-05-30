@@ -36,6 +36,13 @@ export const about: PageContent = {
       text: 'Solunar helps EPCC companies, solar developers and energy asset owners deliver bankable Solar + BESS projects without building full battery storage capability in-house.',
     },
     {
+      kind: 'image',
+      src: '/images/about-detail.png',
+      alt: 'Solar farm with battery storage containers and a city skyline at golden hour',
+      aspect: '16 / 9',
+      caption: 'Built for Malaysia’s energy transition — pairing solar generation with controllable battery storage.',
+    },
+    {
       kind: 'list',
       variant: 'cards',
       columns: 2,
@@ -138,6 +145,13 @@ export const whatWeDo: PageContent = {
       ],
     },
     {
+      kind: 'image',
+      src: '/images/whatwedo-detail.png',
+      alt: 'Technician wiring a power conversion system and energy management cabinet in a BESS room',
+      aspect: '16 / 9',
+      caption: 'The value is in the integration — coordinating battery, PCS, EMS, protection and monitoring as one system.',
+    },
+    {
       kind: 'prose',
       heading: 'Why integration — not just supply — is the real value',
       paragraphs: [
@@ -215,6 +229,13 @@ export const bessPartnerForEpcc: PageContent = {
       text: 'You own the client. We support the technology.',
     },
     {
+      kind: 'image',
+      src: '/images/bess-partner-detail.png',
+      alt: 'An EPCC contractor and a Solunar specialist shaking hands at a solar-plus-storage site',
+      aspect: '16 / 9',
+      caption: 'You keep the client and site execution; Solunar supplies the battery, PCS, EMS and integration behind you.',
+    },
+    {
       kind: 'cards',
       heading: 'What BESS adds beyond solar EPCC',
       lead: 'Solar EPCCs hold strong project and electrical capability; BESS adds requirements Solunar fills:',
@@ -255,13 +276,13 @@ export const bessPartnerForEpcc: PageContent = {
 
 export const epccPartnerProgramme: PageContent = {
   slug: '/epcc-partner-programme',
-  seoTitle: 'EPCC Partner Programme | Add BESS With Solunar Malaysia',
+  seoTitle: 'EPCC Partner Programme | Deliver Solar + BESS With Solunar',
   metaDescription:
-    "Join Solunar's EPCC Partner Programme to enter the BESS market with battery sizing, PCS/EMS support, GoodWe and BYD integration, and proposal help.",
+    "Solunar's EPCC Partner Programme helps EPCC companies deliver Solar + BESS with confidence — BESS design, product access, multi-brand integration, proposal support and O&M.",
   navLabel: 'EPCC Partner Programme',
   eyebrow: 'EPCC Partner Programme',
-  h1: 'Helping EPCC Companies Add BESS Without Building Everything In-House',
-  lead: 'The Solunar EPCC Partner Programme helps solar contractors, electrical contractors and renewable energy companies in Malaysia enter the BESS market with reduced technical risk.',
+  h1: 'Helping EPCCs Deliver Solar + BESS Projects With Confidence',
+  lead: 'Solunar is built to support EPCC companies, not compete with them. We work behind the EPCC as a specialist BESS system integrator, battery solutions partner and technical support provider — helping you strengthen proposals, reduce execution risk and deliver bankable energy storage projects.',
   heroActions: [{ label: 'Become a Solunar EPCC Partner', href: '/contact' }],
   image: {
     src: '/images/epcc-programme.png',
@@ -272,22 +293,102 @@ export const epccPartnerProgramme: PageContent = {
   schema: { type: 'Service', serviceType: 'EPCC partner programme for Solar + BESS' },
   blocks: [
     {
+      kind: 'prose',
+      heading: 'Why this matters now',
+      paragraphs: [
+        'As Malaysia moves into a new phase of solar deployment, Battery Energy Storage Systems are becoming increasingly important for utility-scale solar, C&I solar, LSS6, CRESS, grid support, power expansion and maximum demand management.',
+        'But BESS projects are more complex than conventional solar EPCC works. They require battery selection, PCS integration, EMS design, safety planning, protection coordination, thermal management, warranty alignment and long-term O&M planning. This is where Solunar comes in.',
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'check',
+      columns: 2,
+      heading: 'The challenge for EPCCs',
+      lead: 'Solar EPCCs are strong in PV design, procurement, installation and execution — but adding BESS raises the technical and commercial complexity significantly:',
+      items: [
+        'Choosing the right battery technology for the project',
+        'Integrating batteries with PCS, EMS, SCADA, transformers and grid',
+        'Understanding battery safety, fire protection and thermal management',
+        'Preparing convincing proposals for developers, funds and banks',
+        'Managing multiple brands across battery, inverter, PCS and EMS',
+        'Ensuring performance, warranty and long-term serviceability',
+        'Supporting peak shaving, power expansion and grid-stability use cases',
+        'Avoiding unnecessary technical, commercial and after-sales risk',
+      ],
+    },
+    {
+      kind: 'image',
+      src: '/images/epcc-partner-detail.png',
+      alt: 'Renewable-energy professionals collaborating on Solar + BESS project plans in a partner session',
+      aspect: '16 / 9',
+      caption: 'You lead the client, execution and solar scope; Solunar supports the energy-storage layer behind you.',
+    },
+    {
+      kind: 'prose',
+      heading: 'We help EPCCs become more competitive — not replace them',
+      paragraphs: [
+        'Solunar is not positioned as a traditional solar EPCC contractor. Our focus is to support EPCC companies with specialist BESS knowledge, product access, integration capability and technical confidence.',
+        'This lets EPCCs continue leading the client relationship, project execution and solar scope — while Solunar supports the energy-storage layer. Together, we help clients receive a more complete, future-ready Solar + BESS solution.',
+      ],
+    },
+    {
+      kind: 'cards',
+      heading: 'Why EPCCs partner with Solunar',
+      lead: 'Five ways the partnership strengthens your business:',
+      columns: 2,
+      items: [
+        { icon: 'proposal', title: '1. Strengthen your proposal', text: 'Position BESS for peak shaving, power expansion, energy shifting, backup, grid support, CRESS and investment cases — clearly explaining the technical and financial value.' },
+        { icon: 'safety', title: '2. Reduce technical risk', text: 'We review and structure the BESS architecture from the start — avoiding sizing errors, poor battery/inverter matching, EMS issues and warranty disputes.' },
+        { icon: 'battery', title: '3. Access reliable products', text: 'Access proven BYD battery solutions, GoodWe inverters and batteries, and multi-brand options for different project sizes and applications.' },
+        { icon: 'layers', title: '4. Multi-brand integration', text: 'Coordinate the technical interface across battery, PCS, EMS, SCADA, transformers, switchgear, inverters and grid — without being locked to one configuration.' },
+        { icon: 'developers', title: '5. Support funds & banks', text: 'Prepare a more convincing technical and commercial story on safety, warranty, performance, degradation and O&M for developers, funds and lenders.' },
+      ],
+    },
+    {
       kind: 'list',
       variant: 'inline',
-      heading: 'What the programme covers',
-      lead: 'Programme support covers the full path from first enquiry to long-term operation:',
+      heading: 'What we provide to EPCC partners',
+      lead: 'End-to-end support from early proposal to long-term operation:',
       items: [
-        'BESS project scoping',
-        'Load profile review',
-        'Battery sizing',
-        'PCS selection',
-        'EMS control strategy',
-        'GoodWe product support',
-        'Selected BYD battery integration',
-        'EVE BESS integration',
-        'Commercial proposal support',
-        'O&M planning',
-        'After-sales support',
+        'BESS system design support',
+        'Battery solution selection',
+        'PCS and EMS integration',
+        'Utility-scale and C&I BESS architecture',
+        'Technical proposal support',
+        'Safety and reliability planning',
+        'Vendor and product coordination',
+        'Commercial positioning for developers, funds and banks',
+        'O&M support for BESS assets',
+      ],
+    },
+    {
+      kind: 'list',
+      variant: 'inline',
+      heading: 'Ideal EPCC partners',
+      lead: 'The programme suits companies that want to expand into Solar + BESS without taking unnecessary technical risk:',
+      items: [
+        'Solar EPCC companies',
+        'Electrical contractors',
+        'Renewable energy project developers',
+        'M&E contractors',
+        'Utility-scale solar contractors',
+        'C&I solar contractors',
+        'Infrastructure project contractors',
+        'Township energy infrastructure partners',
+        'Companies bidding for LSS6, CRESS and corporate PPA projects',
+      ],
+    },
+    {
+      kind: 'steps',
+      heading: 'How the EPCC Partner Programme works',
+      lead: 'A clear five-step path from first discussion to long-term support:',
+      items: [
+        { title: 'Project discussion', text: 'You share the project requirement, client objective, site information, load profile, solar design or tender requirements.' },
+        { title: 'BESS solution review', text: 'We review the use case and recommend the suitable configuration, system size, product option and integration approach.' },
+        { title: 'Proposal support', text: 'We help you prepare a stronger technical and commercial proposal for the client, developer, fund or asset owner.' },
+        { title: 'Product & integration coordination', text: 'We support product supply, vendor coordination, system architecture, PCS/EMS integration and commissioning planning.' },
+        { title: 'Long-term support', text: 'After completion we can support O&M, monitoring, performance review, troubleshooting and future expansion.' },
       ],
     },
     {
@@ -296,7 +397,12 @@ export const epccPartnerProgramme: PageContent = {
         {
           question: 'Who qualifies as an EPCC partner?',
           answer:
-            'Solar EPCCs, electrical contractors and renewable energy firms in Malaysia and Southeast Asia that want to deliver Solar + BESS projects.',
+            'Solar EPCCs, electrical and M&E contractors, and renewable energy firms in Malaysia and Southeast Asia that want to deliver Solar + BESS projects — including those bidding for LSS6, CRESS and corporate PPA work.',
+        },
+        {
+          question: 'Will Solunar deal with our client directly?',
+          answer:
+            'No. You lead the client relationship, project execution and solar scope. Solunar works behind your team on the energy-storage technology layer.',
         },
         {
           question: 'What does it cost to join?',
@@ -306,22 +412,11 @@ export const epccPartnerProgramme: PageContent = {
       ],
     },
     {
-      kind: 'steps',
-      heading: 'How the partnership works',
-      lead: 'Solunar supports your team from first enquiry to handover:',
-      items: [
-        { title: 'Scope & load review', text: 'We review the opportunity, load profile and site to frame the BESS.' },
-        { title: 'Sizing & proposal', text: 'We size the battery, PCS and EMS and support your commercial proposal.' },
-        { title: 'Integration support', text: 'We help with design, documentation and vendor coordination.' },
-        { title: 'Commissioning & O&M', text: 'We support commissioning and plan long-term O&M and after-sales.' },
-      ],
-    },
-    {
       kind: 'cta',
-      heading: 'Enter the BESS market with a technology partner beside you.',
-      text: 'Reduce the technical risk of your first Solar + BESS projects with Solunar behind your team.',
+      heading: 'Become a Solunar EPCC Partner.',
+      text: 'Whether you are preparing for a C&I project, utility-scale solar farm, LSS6 submission, CRESS opportunity or township energy infrastructure project, our team is ready to support you.',
       actions: [
-        { label: 'Become a Solunar EPCC Partner', href: '/contact' },
+        { label: 'Partner With Solunar Today', href: '/contact' },
         { label: 'How We Support EPCCs', href: '/bess-partner-for-epcc' },
       ],
     },

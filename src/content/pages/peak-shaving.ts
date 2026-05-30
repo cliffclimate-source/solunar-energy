@@ -77,6 +77,13 @@ export const peakShaving: PageContent = {
       ],
     },
     {
+      kind: 'image',
+      src: '/images/peakshaving-detail.png',
+      alt: 'Commercial battery storage cabinet beside an electrical switchroom managing peak demand',
+      aspect: '16 / 9',
+      caption: 'The EMS discharges the battery at your demand peaks, so the grid sees a lower, cheaper maximum demand.',
+    },
+    {
       kind: 'prose',
       heading: 'A simple example',
       paragraphs: [
