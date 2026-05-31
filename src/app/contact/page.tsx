@@ -7,7 +7,7 @@ import { ContactForm } from '@/components/forms/ContactForm';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { getSiteSettings } from '@/sanity/lib/settings';
 import type { PageContent } from '@/content/types';
-import { contactMeta, contactReasons } from '@/content/pages/contact';
+import { contactMeta, contactReasons, contactPromises } from '@/content/pages/contact';
 
 const contactPage: PageContent = {
   ...contactMeta,
@@ -35,8 +35,25 @@ export default async function Page() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
             <div>
-              <p className="prose-body max-w-md">Contact Solunar for:</p>
-              <ul className="mt-5 grid gap-3">
+              {/* Reassurance — what you get by reaching out */}
+              <ul className="grid gap-4">
+                {contactPromises.map((p) => (
+                  <li key={p.title} className="flex gap-3">
+                    <Check
+                      className="mt-1 h-5 w-5 shrink-0 text-accent-2"
+                      aria-hidden="true"
+                      strokeWidth={2.5}
+                    />
+                    <div>
+                      <p className="text-[0.95rem] font-semibold text-ink">{p.title}</p>
+                      <p className="mt-0.5 text-sm leading-relaxed text-muted">{p.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-10 prose-body max-w-md">Contact Solunar for:</p>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {contactReasons.map((reason) => (
                   <li key={reason} className="flex gap-3">
                     <Check

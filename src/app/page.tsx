@@ -13,6 +13,9 @@ import { Figure } from '@/components/ui/Figure';
 import { getIcon } from '@/components/ui/icons';
 import { Hero } from '@/components/home/Hero';
 import { BrandStrip } from '@/components/home/BrandStrip';
+import { TrustBand } from '@/components/home/TrustBand';
+import { SocialProof } from '@/components/home/SocialProof';
+import { AssessmentCTA } from '@/components/home/AssessmentCTA';
 import { GridGlow } from '@/components/visuals/Decor';
 import {
   homeFaqs,
@@ -74,6 +77,9 @@ export default function HomePage() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* Why work with Solunar — trust band (stats + pillars + process) */}
+      <TrustBand />
 
       {/* Section 3 — What Solunar Provides + technologies */}
       <Section tone="mist">
@@ -169,6 +175,9 @@ export default function HomePage() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* Social proof — trusted technology + testimonials */}
+      <SocialProof />
 
       {/* Malaysia context band */}
       <Section tone="mist">
@@ -332,6 +341,9 @@ export default function HomePage() {
           </p>
         </Container>
       </section>
+
+      {/* Lead magnet — free feasibility assessment */}
+      <AssessmentCTA />
 
       {/* Section 10 — Final CTA */}
       <CTABand

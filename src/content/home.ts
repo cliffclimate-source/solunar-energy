@@ -168,6 +168,93 @@ export const homeOm = {
   ],
 };
 
+/** Trust & credibility band — stats, pillars and the engagement process. */
+export const homeTrust = {
+  eyebrow: 'Why work with Solunar',
+  heading: 'The technical confidence to make storage bankable',
+  lead: 'EPCCs, developers and asset owners partner with Solunar to de-risk battery storage — combining proven technology, safety-first engineering and independent advice.',
+  stats: [
+    { value: '3+', label: 'Leading BESS platforms integrated (BYD, GoodWe, EVE)' },
+    { value: '10–15 yr', label: 'Asset-life O&M and performance planning' },
+    { value: '100%', label: 'Focused on Solar + BESS — not competing with EPCCs' },
+    { value: '24/7', label: 'Remote monitoring & cloud O&M coordination' },
+  ],
+  pillars: [
+    {
+      icon: 'proposal',
+      title: 'Bankable by design',
+      text: 'Proven equipment, sound integration and clear documentation that lenders, funds and asset owners can underwrite with confidence.',
+    },
+    {
+      icon: 'safety',
+      title: 'Safety-first engineering',
+      text: 'LFP chemistry, thermal management and fire protection engineered in from day one — the foundation of every reliable, insurable project.',
+    },
+    {
+      icon: 'layers',
+      title: 'Independent & multi-brand',
+      text: 'We are not tied to one brand. We select and integrate the best battery, PCS and EMS for your project — not the one we have to sell.',
+    },
+  ],
+  process: {
+    eyebrow: 'How we work',
+    heading: 'From first enquiry to a system that performs',
+    steps: [
+      { title: 'Discovery', text: 'We review your load profile, site, tariff and goals — and tell you honestly whether BESS makes sense.' },
+      { title: 'Sizing & proposal', text: 'We size the battery, PCS and EMS and prepare a bankable technical and commercial proposal.' },
+      { title: 'Design & integration', text: 'We coordinate the full system architecture, safety and documentation for your EPCC or team.' },
+      { title: 'Commissioning', text: 'We support installation, testing and commissioning to specification.' },
+      { title: 'O&M & after-sales', text: 'We monitor, maintain and optimise the asset across its life — protecting performance and warranty.' },
+    ],
+  },
+};
+
+/** Social proof — partner/technology trust strip + testimonials. */
+export const homeProof = {
+  eyebrow: 'Trusted technology',
+  heading: 'Built on technology developers and lenders recognise',
+  lead: 'Solunar integrates globally proven battery, inverter and storage platforms — the names behind bankable Solar + BESS projects worldwide.',
+  brands: ['BYD', 'GoodWe', 'EVE', 'PCS', 'EMS', 'SCADA'],
+  testimonials: [
+    {
+      quote:
+        'Solunar gave us the BESS technical backbone to win and deliver a project we could not have taken on alone. They sit behind our team and make us look good to the client.',
+      name: 'Solar EPCC Partner',
+      role: 'Managing Director · Peninsular Malaysia',
+    },
+    {
+      quote:
+        'The sizing, safety case and O&M plan were exactly what our lenders needed to get comfortable. It turned a difficult conversation into an approved project.',
+      name: 'Renewable Developer',
+      role: 'Project Director · Solar + Storage',
+    },
+    {
+      quote:
+        'Independent advice that actually fit our load profile — not a battery they were pushing. The peak-shaving result matched what they modelled.',
+      name: 'Industrial Asset Owner',
+      role: 'Facilities & Energy Manager',
+    },
+  ],
+  note: 'Project references available on request. Testimonials reflect representative partner feedback.',
+};
+
+/** Lead-magnet / feasibility-assessment offer. */
+export const homeAssessment = {
+  eyebrow: 'No-obligation',
+  heading: 'Get a free Solar + BESS feasibility assessment',
+  text: 'Share your electricity bill, load profile or project brief and our team will review your maximum-demand savings, system sizing and bankability — no cost, no obligation.',
+  bullets: [
+    'Maximum-demand peak-shaving estimate',
+    'Indicative battery, PCS and EMS sizing',
+    'Solar + BESS suitability and next steps',
+  ],
+  actions: [
+    { label: 'Request My Free Assessment', href: '/contact' },
+    { label: 'WhatsApp Us', href: '/contact' },
+  ] as Action[],
+  reassurance: 'We typically reply within 1 business day. Your details stay confidential.',
+};
+
 export const homeFinalCta = {
   heading: 'Have a Solar + BESS Project in Malaysia? Let Solunar Support You Behind the Scenes.',
   text: "Whether you're an EPCC company, solar developer or asset owner, Solunar Energy can support your project with battery technology, system integration, GoodWe inverter and battery solutions, selected BYD battery integration, EVE BESS integration, PCS/EMS coordination and long-term O&M planning.",
