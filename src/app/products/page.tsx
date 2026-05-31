@@ -122,17 +122,25 @@ export default function Page() {
       <Section tone="paper">
         <Container>
           <Reveal>
-            <div className="max-w-2xl">
-              <Eyebrow>EMS &amp; Cloud O&amp;M</Eyebrow>
-              <h2 className="mt-4 font-display text-display-sm font-semibold tracking-tight text-ink">
-                Software-driven control. Cloud-based asset management.
-              </h2>
-              <p className="mt-4 prose-body">
-                A BESS is only as good as the software that controls, monitors, protects and
-                optimises it over time. Every Solunar system pairs on-site energy management with
-                cloud-based oversight — so EPCCs, developers, funds and asset owners can operate
-                storage safely, efficiently and intelligently.
-              </p>
+            <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+              <div className="max-w-2xl">
+                <Eyebrow>EMS &amp; Cloud O&amp;M</Eyebrow>
+                <h2 className="mt-4 font-display text-display-sm font-semibold tracking-tight text-ink">
+                  Software-driven control. Cloud-based asset management.
+                </h2>
+                <p className="mt-4 prose-body">
+                  A BESS is only as good as the software that controls, monitors, protects and
+                  optimises it over time. Every Solunar system pairs on-site energy management with
+                  cloud-based oversight — so EPCCs, developers, funds and asset owners can operate
+                  storage safely, efficiently and intelligently.
+                </p>
+              </div>
+              <Figure
+                src="/images/products-ems.png"
+                alt="Energy-management dashboard on a laptop in front of battery storage cabinets"
+                aspect="4 / 3"
+                tone="light"
+              />
             </div>
           </Reveal>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
