@@ -114,6 +114,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
+      {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="name" required>
