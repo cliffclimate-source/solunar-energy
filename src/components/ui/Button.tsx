@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 
 type Variant = 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -66,17 +66,19 @@ export function Button({
     href?: string;
   }) {
   const classes = cn(base, variantClasses(variant, onDark), sizeClasses[size], className);
+  // onClick is typed for a button; reuse it on the link branches too.
+  const onClick = rest.onClick as unknown as MouseEventHandler<HTMLElement> | undefined;
 
   if (href) {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
       return (
-        <a href={href} className={classes}>
+        <a href={href} className={classes} onClick={onClick}>
           {inner(children, withArrow)}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {inner(children, withArrow)}
       </Link>
     );

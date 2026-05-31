@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
-import { primaryNav, isNavGroup, type NavGroup } from '@/lib/site';
+import { primaryNav, isNavGroup, site, type NavGroup, type NavLink } from '@/lib/site';
 import { Wordmark } from '@/components/ui/Wordmark';
 import { Button } from '@/components/ui/Button';
+import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { Container } from '@/components/ui/primitives';
 
 const navItemBase =
@@ -23,9 +25,20 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', mobileOpen);
     return () => {
       document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMobileOpen(false);
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [mobileOpen]);
 
   if (pathname?.startsWith('/studio')) return null;
@@ -71,7 +84,9 @@ export function Header() {
         </button>
       </Container>
 
-      {mobileOpen && <MobileDrawer />}
+      {mobileOpen && (
+        <MobileDrawer pathname={pathname} onClose={() => setMobileOpen(false)} />
+      )}
     </header>
   );
 }
@@ -146,50 +161,147 @@ function NavDropdown({ group }: { group: NavGroup }) {
   );
 }
 
-function MobileDrawer() {
-  return (
-    <div id="mobile-nav" className="lg:hidden">
-      <div className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto overscroll-contain bg-paper">
-        <Container className="flex flex-col py-4">
+function MobileDrawer({
+  pathname,
+  onClose,
+}: {
+  pathname: string | null;
+  onClose: () => void;
+}) {
+  // Portal to <body> so the fixed sheet escapes the header's backdrop-blur
+  // containing block (backdrop-filter traps position:fixed descendants).
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname?.startsWith(href);
+
+  if (!mounted) return null;
+
+  return createPortal(
+    <div id="mobile-nav" className="lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+      {/* Dimmed backdrop — tap to close */}
+      <button
+        type="button"
+        aria-label="Close menu"
+        onClick={onClose}
+        className="mobile-fade fixed inset-0 top-14 z-40 cursor-default bg-ink/40 backdrop-blur-sm"
+      />
+
+      {/* Sliding sheet — anchored right, capped width on larger phones/tablets */}
+      <div className="mobile-sheet fixed bottom-0 right-0 top-14 z-40 flex w-full max-w-sm flex-col bg-paper shadow-lift">
+        <nav aria-label="Mobile" className="flex-1 overflow-y-auto overscroll-contain px-5 pb-4 pt-3">
           {primaryNav.map((entry) =>
             isNavGroup(entry) ? (
-              <details key={entry.label} className="group border-b border-line">
-                <summary className="flex cursor-pointer list-none items-center justify-between py-3.5 text-base font-medium text-ink [&::-webkit-details-marker]:hidden">
-                  {entry.label}
-                  <ChevronDown
-                    className="h-4 w-4 text-muted transition-transform duration-200 group-open:rotate-180"
-                    aria-hidden="true"
-                  />
-                </summary>
-                <ul className="flex flex-col gap-0.5 pb-3">
-                  {entry.items.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-sm text-muted transition-colors hover:bg-mist hover:text-ink"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
+              <MobileGroup
+                key={entry.label}
+                group={entry}
+                isActive={isActive}
+                onNavigate={onClose}
+              />
             ) : (
               <Link
                 key={entry.label}
                 href={entry.href}
-                className="border-b border-line py-3.5 text-base font-medium text-ink"
+                onClick={onClose}
+                aria-current={isActive(entry.href) ? 'page' : undefined}
+                className={cn(
+                  'flex items-center justify-between border-b border-line py-4 text-[1.05rem] font-medium transition-colors',
+                  isActive(entry.href) ? 'text-accent-2' : 'text-ink',
+                )}
               >
                 {entry.label}
+                <ChevronRight className="h-4 w-4 text-muted/50" aria-hidden="true" />
               </Link>
             ),
           )}
-          <div className="pt-6">
-            <Button href="/contact" size="lg" withArrow className="w-full">
-              Partner With Solunar
-            </Button>
-          </div>
-        </Container>
+        </nav>
+
+        {/* Sticky CTA footer */}
+        <div className="border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-4">
+          <Button href="/contact" size="lg" withArrow className="w-full" onClick={onClose}>
+            Partner With Solunar
+          </Button>
+          <a
+            href={site.contact.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-line py-3 text-sm font-medium text-ink transition-colors hover:bg-mist"
+          >
+            <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+            WhatsApp {site.contact.phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
+function MobileGroup({
+  group,
+  isActive,
+  onNavigate,
+}: {
+  group: NavGroup;
+  isActive: (href: string) => boolean | undefined;
+  onNavigate: () => void;
+}) {
+  // Auto-expand the section that contains the current page.
+  const containsActive = group.items.some((i) => isActive(i.href));
+  const [open, setOpen] = useState(containsActive);
+
+  return (
+    <div className="border-b border-line">
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between py-4 text-[1.05rem] font-medium text-ink"
+      >
+        {group.label}
+        <ChevronDown
+          className={cn(
+            'h-4 w-4 text-muted transition-transform duration-200',
+            open && 'rotate-180',
+          )}
+          aria-hidden="true"
+        />
+      </button>
+      <div
+        className={cn(
+          'grid transition-all duration-300 ease-out',
+          open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
+        )}
+      >
+        <ul className="overflow-hidden">
+          {group.items.map((item: NavLink) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                onClick={onNavigate}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={cn(
+                  'flex items-center gap-3 rounded-xl px-3 py-3 text-[0.95rem] transition-colors',
+                  isActive(item.href)
+                    ? 'bg-mist font-medium text-accent-2'
+                    : 'text-muted hover:bg-mist hover:text-ink',
+                )}
+              >
+                <span
+                  className={cn(
+                    'h-1.5 w-1.5 shrink-0 rounded-full',
+                    isActive(item.href) ? 'bg-accent-2' : 'bg-line',
+                  )}
+                  aria-hidden="true"
+                />
+                {item.label}
+              </Link>
+            </li>
+          ))}
+          <li className="h-2" aria-hidden="true" />
+        </ul>
       </div>
     </div>
   );
