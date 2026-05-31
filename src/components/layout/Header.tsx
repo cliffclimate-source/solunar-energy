@@ -10,6 +10,7 @@ import { primaryNav, isNavGroup, site, type NavGroup, type NavLink } from '@/lib
 import { Wordmark } from '@/components/ui/Wordmark';
 import { Button } from '@/components/ui/Button';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 import { Container } from '@/components/ui/primitives';
 
 const navItemBase =
@@ -66,7 +67,8 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-1 lg:flex">
+          <LanguageSwitcher />
           <Button href="/contact" withArrow>
             Partner With Solunar
           </Button>
@@ -219,6 +221,12 @@ function MobileDrawer({
 
         {/* Sticky CTA footer */}
         <div className="border-t border-line bg-paper px-5 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-4">
+          <div className="mb-4 flex flex-col gap-2">
+            <span className="font-mono text-[0.62rem] uppercase tracking-eyebrow text-muted">
+              Language
+            </span>
+            <LanguageSwitcher variant="mobile" />
+          </div>
           <Button href="/contact" size="lg" withArrow className="w-full" onClick={onClose}>
             Partner With Solunar
           </Button>
