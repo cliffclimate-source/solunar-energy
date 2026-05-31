@@ -65,7 +65,7 @@ export const basicsArticles: Article[] = [
     ],
     related: [
       { label: 'Commercial & Industrial BESS', href: '/commercial-industrial-bess-malaysia' },
-      { label: 'What We Do', href: '/what-we-do' },
+      { label: 'About Us', href: '/about' },
     ],
   },
   {
@@ -275,7 +275,7 @@ export const basicsArticles: Article[] = [
     ],
     related: [
       { label: 'Utility-Scale ESS Farms', href: '/utility-scale-ess-malaysia' },
-      { label: 'What We Do', href: '/what-we-do' },
+      { label: 'About Us', href: '/about' },
     ],
   },
   {

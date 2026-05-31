@@ -1,5 +1,5 @@
 import type { PageContent } from '@/content/types';
-import { about, whatWeDo, bessPartnerForEpcc, epccPartnerProgramme } from '@/content/pages/positioning';
+import { about, forEpcc } from '@/content/pages/positioning';
 import { bydBattery, goodweInverter, eveBess, multiBrand, pcsEms } from '@/content/pages/technology';
 import {
   commercialIndustrial,
@@ -19,9 +19,7 @@ import { products } from '@/content/pages/products';
 /** Every page rendered through the shared StandardPage layout. */
 export const standardPages: PageContent[] = [
   about,
-  whatWeDo,
-  bessPartnerForEpcc,
-  epccPartnerProgramme,
+  forEpcc,
   bydBattery,
   goodweInverter,
   eveBess,

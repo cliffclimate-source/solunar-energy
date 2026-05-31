@@ -356,7 +356,7 @@ const coreArticles: Article[] = [
           'Yes. The integrator complements your team, providing the BESS-specific technology and integration support while your team handles civil, electrical and site execution.',
       },
     ],
-    related: [{ label: 'We Support EPCCs', href: '/bess-partner-for-epcc' }],
+    related: [{ label: 'For EPCC', href: '/for-epcc' }],
   },
   {
     slug: 'how-byd-goodwe-and-ems-come-together',

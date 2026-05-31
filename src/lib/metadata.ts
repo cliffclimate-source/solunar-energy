@@ -10,7 +10,7 @@ const OG_DEFAULT = '/og/og-home.png';
  */
 function ogImageForPath(path: string): string {
   const p = path.toLowerCase();
-  if (p === '/' || p === '/about' || p === '/what-we-do') return '/og/og-home.png';
+  if (p === '/' || p === '/about') return '/og/og-home.png';
   if (p === '/contact' || p.includes('epcc') || p.includes('partner')) return '/og/og-contact.png';
   if (p.includes('knowledge')) return '/og/og-knowledge.png';
   if (
@@ -60,22 +60,12 @@ const SOCIAL_COPY: Record<string, Social> = {
   '/about': {
     title: "Built to Power Malaysia's Energy Storage Future",
     description:
-      'Meet the Malaysian Solar + BESS technology team helping EPCCs, developers and asset owners turn battery storage into bankable projects.',
+      'Meet Solunar — the Malaysian Solar + BESS distributor and integrator. Battery supply, PCS/EMS integration and long-term O&M behind bankable storage projects.',
   },
-  '/what-we-do': {
-    title: 'BESS Distribution, Integration & Long-Term O&M',
-    description:
-      'From battery selection to PCS/EMS integration and lifelong O&M — the complete storage technology layer behind your Solar + BESS projects.',
-  },
-  '/bess-partner-for-epcc': {
+  '/for-epcc': {
     title: 'Win More Solar + BESS Projects — Without the Technical Risk',
     description:
-      'Solunar is the BESS partner behind the EPCC. You keep the client and site; we bring the battery, PCS, EMS and integration expertise. See how it works.',
-  },
-  '/epcc-partner-programme': {
-    title: 'Add BESS to Your Business — With a Specialist Beside You',
-    description:
-      'Join the Solunar EPCC Partner Programme: battery sizing, proposal support, integration and O&M, so you can deliver storage with confidence.',
+      'Solunar is the BESS partner behind the EPCC. You keep the client and site; we bring the battery, PCS, EMS, proposal support and O&M. See how the partnership works.',
   },
   '/byd-battery-malaysia': {
     title: 'BYD Battery Solutions for Safe, Bankable Storage',

@@ -90,7 +90,7 @@ export default function Page() {
         text="Solunar helps EPCC companies, developers and asset owners turn questions into bankable storage projects."
         actions={[
           { label: 'Talk to Solunar', href: '/contact' },
-          { label: 'What We Do', href: '/what-we-do' },
+          { label: 'About Us', href: '/about' },
         ]}
         tone="ink"
       />

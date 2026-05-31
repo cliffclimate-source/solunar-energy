@@ -16,7 +16,7 @@ export const homeHero = {
     'We are not an EPCC contractor. We are the technology partner behind the EPCC — supplying battery storage, GoodWe inverters and batteries, selected BYD battery integration, EVE BESS integration, PCS and EMS coordination, system sizing, technical proposal support and O&M planning for commercial and utility-scale ESS projects across Malaysia and Southeast Asia.',
   actions: [
     { label: 'Partner With Solunar', href: '/contact' },
-    { label: 'How We Support EPCCs', href: '/bess-partner-for-epcc' },
+    { label: 'How We Support EPCCs', href: '/for-epcc' },
   ] as Action[],
   stats: [
     { value: 'BYD', label: 'Safety-focused LFP battery integration' },
@@ -45,7 +45,7 @@ export const homeServices = {
       icon: 'battery',
       title: 'BESS Technology Distribution',
       text: 'Supply and support of selected battery storage technologies for commercial, industrial and utility-scale projects.',
-      href: '/what-we-do',
+      href: '/about',
       image: '/images/multi-brand-integration.png',
     },
     {
@@ -260,7 +260,7 @@ export const homeFinalCta = {
   text: "Whether you're an EPCC company, solar developer or asset owner, Solunar Energy can support your project with battery technology, system integration, GoodWe inverter and battery solutions, selected BYD battery integration, EVE BESS integration, PCS/EMS coordination and long-term O&M planning.",
   actions: [
     { label: 'Talk to Solunar', href: '/contact' },
-    { label: 'Become an EPCC Partner', href: '/epcc-partner-programme' },
+    { label: 'Become an EPCC Partner', href: '/for-epcc' },
   ] as Action[],
 };
 

@@ -203,7 +203,7 @@ export const incentivesArticles: Article[] = [
     ],
     related: [
       { label: 'For Developers & Asset Owners', href: '/solar-bess-developers' },
-      { label: 'EPCC Partner Programme', href: '/epcc-partner-programme' },
+      { label: 'For EPCC', href: '/for-epcc' },
     ],
   },
 ];

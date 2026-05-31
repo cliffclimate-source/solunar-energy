@@ -46,28 +46,8 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 }
 
 export const primaryNav: NavEntry[] = [
-  {
-    label: 'Company',
-    items: [
-      { label: 'About Solunar', href: '/about', description: 'The Solar + BESS platform built to support EPCCs.' },
-      { label: 'What We Do', href: '/what-we-do', description: 'Distribution, integration and long-term O&M.' },
-    ],
-  },
-  {
-    label: 'For EPCCs',
-    items: [
-      {
-        label: 'We Support EPCCs',
-        href: '/bess-partner-for-epcc',
-        description: "We don't compete with EPCCs — we're the technology partner behind them.",
-      },
-      {
-        label: 'EPCC Partner Programme',
-        href: '/epcc-partner-programme',
-        description: 'Enter the BESS market with reduced technical risk.',
-      },
-    ],
-  },
+  { label: 'About Us', href: '/about' },
+  { label: 'For EPCC', href: '/for-epcc' },
   {
     label: 'Technology',
     items: [
@@ -101,10 +81,8 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: 'Company',
     links: [
-      { label: 'About Solunar', href: '/about' },
-      { label: 'What We Do', href: '/what-we-do' },
-      { label: 'We Support EPCCs', href: '/bess-partner-for-epcc' },
-      { label: 'EPCC Partner Programme', href: '/epcc-partner-programme' },
+      { label: 'About Us', href: '/about' },
+      { label: 'For EPCC', href: '/for-epcc' },
       { label: 'Industries We Serve', href: '/industries' },
     ],
   },

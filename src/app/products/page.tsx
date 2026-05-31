@@ -229,7 +229,7 @@ export default function Page() {
         text="Tell Solunar your capacity, power and site requirements — we'll recommend and integrate the right configuration."
         actions={[
           { label: 'Request Product Details', href: '/contact' },
-          { label: 'How We Support EPCCs', href: '/bess-partner-for-epcc' },
+          { label: 'How We Support EPCCs', href: '/for-epcc' },
         ]}
       />
     </>
