@@ -42,7 +42,7 @@ export function localBusinessLd(): Json {
     name: site.name,
     legalName: site.legalName,
     url: site.url,
-    image: `${site.url}/og-image.svg`,
+    image: `${site.url}/og/og-home.png`,
     description: site.description,
     email: site.contact.email,
     telephone: site.contact.phoneDisplay,

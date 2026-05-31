@@ -39,6 +39,19 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: site.legalName,
     locale: site.locale,
+    images: [
+      {
+        url: '/og/og-home.png',
+        width: 1200,
+        height: 630,
+        alt: 'Solunar Energy — Solar + BESS technology partner in Malaysia',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og/og-home.png'],
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
