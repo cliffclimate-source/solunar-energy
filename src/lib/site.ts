@@ -62,6 +62,7 @@ export const primaryNav: NavEntry[] = [
   {
     label: 'Solutions',
     items: [
+      { label: 'All Solutions — Overview', href: '/solutions', description: 'See every Solar + BESS solution on one page.' },
       { label: 'BYD Utility BESS · LSS6 / CRESS', href: '/byd-utility-bess', description: 'Total utility-scale BESS solution for LSS6, CRESS and grid-scale solar.' },
       { label: 'Commercial & Industrial BESS', href: '/commercial-industrial-bess-malaysia', description: 'Peak shaving, self-consumption, resilience.' },
       { label: 'Utility-Scale ESS Farms', href: '/utility-scale-ess-malaysia', description: 'Technology support for large storage assets.' },
@@ -100,6 +101,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: 'Solutions',
     links: [
+      { label: 'All Solutions', href: '/solutions' },
       { label: 'BYD Utility BESS (LSS6/CRESS)', href: '/byd-utility-bess' },
       { label: 'Commercial & Industrial BESS', href: '/commercial-industrial-bess-malaysia' },
       { label: 'Utility-Scale ESS Farms', href: '/utility-scale-ess-malaysia' },

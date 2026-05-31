@@ -11,6 +11,7 @@ const OG_DEFAULT = '/og/og-home.png';
 function ogImageForPath(path: string): string {
   const p = path.toLowerCase();
   if (p === '/' || p === '/about') return '/og/og-home.png';
+  if (p === '/solutions') return '/og/og-utility.png';
   if (p === '/contact' || p.includes('epcc') || p.includes('partner')) return '/og/og-contact.png';
   if (p.includes('knowledge')) return '/og/og-knowledge.png';
   if (
@@ -61,6 +62,11 @@ const SOCIAL_COPY: Record<string, Social> = {
     title: "Built to Power Malaysia's Energy Storage Future",
     description:
       'Meet Solunar — the Malaysian Solar + BESS distributor and integrator. Battery supply, PCS/EMS integration and long-term O&M behind bankable storage projects.',
+  },
+  '/solutions': {
+    title: 'Solar + BESS Solutions for Every Energy Challenge',
+    description:
+      'Peak shaving, power expansion, utility-scale ESS, O&M, safety and more — see every Solunar Solar + BESS solution on one page, each matched to a real business problem.',
   },
   '/for-epcc': {
     title: 'Win More Solar + BESS Projects — Without the Technical Risk',

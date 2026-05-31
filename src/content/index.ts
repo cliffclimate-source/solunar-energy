@@ -38,6 +38,7 @@ export const standardPages: PageContent[] = [
 /** All crawlable paths for the sitemap. */
 export const allPaths: string[] = [
   '/',
+  '/solutions',
   ...standardPages.map((p) => p.slug),
   '/products',
   ...products.map((p) => `/products/${p.id}`),
